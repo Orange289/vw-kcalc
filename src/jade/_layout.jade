@@ -3,16 +3,18 @@ include templates/_global_mixins
 include templates/_project_mixins
 include templates/_project_vars
 - var array = '';
+- var arrayFav = '';
 block vars
+block favicons
 doctype
 html(lang='ru')
 	head
-		+head(array)
+		+head(array,arrayFav)
 	body(class='#{array.body_class}')
 		+header
-		.wrapper(class='#{array.layout_mod}')
-			.base(class='#{array.layout_mod}')
-				block content_block
+			main.page_main(class='#{array.layout_mod}')
+				.tabs
+
 			+footer
 		+scripts
 		block local_popup
