@@ -1,0 +1,10 @@
+//CSS-import
+
+@import 'normalize.scss';
+@import 'variables';
+@import 'mixins';
+@import 'global';
+
+@import 'components/*';
+@import 'blocks/*';
+@import 'pages/*';
