@@ -1,0 +1,20 @@
+.tabs__content#tab-content-2
+	+ form_element({
+		type:'select',
+		class_array: defaule_select_1,
+		id:'credit_program',
+		title:'Программа',
+		options:['Кредит на приобретение транспортного средства', 'Кредит на приобретение транспортного средства', 'Кредит на приобретение транспортного средства']
+	})
+	.tabs.tabs_docs
+		+ tabs(arrayTabs_2)
+		.documents.documents_two.tabs__content#tab-content-3
+			.documents__item
+				span Платеж в месяц
+				b 127 800
+			.documents__item
+				span Ставка
+				b 19%
+			.documents__item
+				span Стоимость кредита
+				b 770 100

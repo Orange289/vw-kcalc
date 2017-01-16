@@ -1,0 +1,77 @@
+.request
+	h1.page_body__title.request.title Заявка на получение кредита
+	form.request__form(action='#' method='post')
+		+ form_element({
+			type:'text',
+			class_array: default_text_2,
+			id:'name',
+			title:'Имя',
+			placeholder:'Имя',
+			active:'1'
+		})
+		+ form_element({
+			type:'radio',
+			class_array: default_radio,
+			name: 'sex',
+			title:'Г-н',
+			checked:'checked'
+		})
+		+ form_element({
+			type:'radio',
+			class_array: default_radio,
+			name: 'sex',
+			title:'Г-жа'
+		})
+		+ form_element({
+			type:'text',
+			class_array: default_text_3,
+			id:'surname',
+			title:'Фамилия',
+			placeholder:'Фамилия',
+			active:'1'
+		})
+		+ form_element({
+			type:'email',
+			class_array: default_text_4,
+			id:'email',
+			title:'E-mail',
+			placeholder:'E-mail',
+			active:'1'
+		})
+		+ form_element({
+			type:'tel',
+			class_array: default_text_5,
+			id:'tel',
+			title:'Телефон',
+			placeholder:'Телефон',
+			active:'1'
+		})
+		+ form_element({
+			type:'select',
+			class_array: default_select_3,
+			id:'city',
+			title:'Город',
+			options:['Набережные Челны','Москва','Санкт-Петербург']
+		})
+		+ form_element({
+			type:'select',
+			class_array: default_select_4,
+			id:'dealer',
+			title:'Дилер',
+			options:['Genser','Genser','Genser']
+		})
+		button.btn.btn_map(value='На карте')
+		.request__agree
+			+ form_element({
+				type:'checkbox',
+				class_array: default_checkbox,
+				title: 'Согласие на обработку персональных данных с целью обработки запроса',
+				checked: 'checked'
+			})
+			+ form_element({
+				type:'checkbox',
+				class_array: default_checkbox,
+				title: 'Согласие на обработку персональных данных с целью дальнейшей коммуникации',
+				checked: 'checked'
+			})
+		button.btn.btn_send(value='Отправить')

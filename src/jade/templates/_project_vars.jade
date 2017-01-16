@@ -1,11 +1,26 @@
-- var production = false;
 - var jQuery = true;
 - var jQueryUI = false;
 
 //--------------------------------------------------------------forms
-- var default_select = {block_class_mod:'form__select select_wrap',class_mod:'', elem_class:'js_chosen_select', add_class:''}
-- var default_checkbox = {block_class_mod:'check_1_mod',class_mod:'check_1_mod', elem_class:'check_1_mod'}
-- var default_radio = {block_class_mod:'form__cell_radio',class_mod:'radio_1_mod', elem_class:'radio_1_mod'}
+- var default_select_1 = {block_class_mod:'select_wrap ', elem_class:'js_chosen_select'}
+- var default_select_2 = {block_class_mod:'select_wrap form__cell_select_credit', elem_class:'js_chosen_select'}
+- var default_select_3 = {block_class_mod:'select_wrap form__cell_select_city', elem_class:'js_chosen_select'}
+- var default_select_4 = {block_class_mod:'select_wrap form__cell_select_dealer', elem_class:'js_chosen_select'}
+- var default_text_1 = {block_class_mod:'programs__input programs__input_cost', elem_class:'prices__value prices__value_cost form__text_disabled', label_mod:'form__label_price'}
+- var default_text_2 = {block_class_mod:'form__cell_text_name', elem_class:'request__input request__input_name', label_mod:'form__label_request'}
+- var default_text_3 = {block_class_mod:'form__cell_text_surname', elem_class:'request__input request__input_surname', label_mod:'form__label_request'}
+- var default_text_4 = {block_class_mod:'form__cell_text_email', elem_class:'request__input request__input_email', label_mod:'form__label_request'}
+- var default_text_5 = {block_class_mod:'form__cell_text_tel', elem_class:'request__input request__input_tel', label_mod:'form__label_request'}
+- var default_checkbox = {block_class_mod:'form__cell_checkbox', elem_class:'form__checkbox request__checkbox', label_mod:'form__label_checkbox'}
+- var default_radio = {block_class_mod:'form__cell_radio', elem_class:'form__radio request__radio', label_mod:'form__label_radio'}
 
 //--------------------------------------------------------------forms
 - var headerMenuArray = {items:[{title:'News/blog',active:false},{title:'Team and story',active:false},{title:'In the media',active:true},{title:'Careers',active:false},{title:'Online shop',active:false},{title:'Past projects',active:false},{title:'Parners',active:false},{title:'Contact',active:false}],mod:'header_mod'}
+
+//--------------------------------------------------------------tabs
+- var arrayTabs_1 = [{name:'types',id:'tab-first',class_r:'tabs__radio',class_l:'tabs__label',label:'Программа гарант',check:'1'}, {name:'types',id:'tab-second',class_r:'tabs__radio',class_l:'tabs__label',label:'Стандартный кредит',check:'0'}]
+- var arrayTabs_2 = [{name:'docs',id:'tab-third',class_r:'tabs__radio',class_l:'tabs__label',label:'По 2-м документам',check:'1'}, {name:'docs',id:'tab-forth',class_r:'tabs__radio',class_l:'tabs__label',label:'Полный комплект',check:'0'}]
+
+//--------------------------------------------------------------slider
+- var arraySlider_1 = {title:'Первоначальный взнос', id:'deposit', mod:'deposit'}
+- var arraySlider_2 = {title:'Остаточный платеж', id:'rest', mod:'rest'}

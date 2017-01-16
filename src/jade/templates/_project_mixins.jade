@@ -1,5 +1,11 @@
 mixin header
 	header
 		h1.page_body__title Кредитный калькулятор
-mixin footer
-	footer.footer
+mixin slider(array)
+	label.form__label(for='#{array.id}') #{array.title}
+	.range__slider(class='range__slider_#{array.mod}')
+	input.range__input(class='range__input_#{array.mod}' type='text' value='0' pattern='[0-9]')
+	.scale
+		- var item = 1
+		while item < 101
+			span= item++

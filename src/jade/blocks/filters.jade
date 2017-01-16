@@ -1,0 +1,41 @@
+.page_main__program.page_main__program_guarantee.programs__content.programs__content_guarantee
+	.programs__selects.car_filters
+		+ form_element({
+			type:'select',
+			class_array: default_select_1,
+			id:'model',
+			title:'Модель',
+			options:['Tiguan','Tiguan','Tiguan']
+		})
+		+ form_element({
+			type:'select',
+			class_array: default_select_1,
+			id:'config',
+			title:'Комплектация',
+			options:['Allstar','Allstar','Allstar']
+		})
+		.programs__img
+		.programs__prices.prices
+			.prices__cost
+				+ form_element({
+					type:'text',
+					class_array: default_text_1,
+					id:'cost',
+					value:'10 319 000',
+					title:'Стоимость автомобиля',
+					active:'0'
+				})
+					span Р
+			.prices__payment
+				b.prices__value.prices__value_pay 170 800 Р
+				span.form__label.form__label_price Ежемесячный платеж
+		.programs__slider.range.range_deposit
+			+ slider(arraySlider_1)
+		.programs__credit_term
+			+ form_element({
+				type:'select',
+				class_array: default_select_1,
+				id:'credit',
+				title:'Срок кредитования',
+				options:['12 месяцев','12 месяцев','12 месяцев']
+			})
