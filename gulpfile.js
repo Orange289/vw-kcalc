@@ -39,8 +39,7 @@ var path = {
 		html: 'build/',
 		js: 'build/js/',
 		css: 'build/css/',
-		img: 'build/img/',
-		fonts: 'build/fonts/'
+		img: 'build/img/'
 	},
 	src: { //Пути откуда брать исходники
 		jade: 'src/jade/',
@@ -136,7 +135,7 @@ gulp.task('svgsprite', function() {
 gulp.task('fonts:build', function() {
     gulp.src(path.src.fonts)
 		.pipe(cssfont64())
-		.pipe(gulp.dest(path.build.fonts))
+		.pipe(gulp.dest(path.build.css))
 		.pipe(browserSync.stream());
 });
 

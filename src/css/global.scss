@@ -1,11 +1,14 @@
 //global styles
 
 body {
-	font-family: 'Roboto', 'Arial', sans-serif;
-	@include font-param(14px, 17px, 300);
+	font-family: 'vwtextoffice-regular', sans-serif;
+	@include font-param(16px, 16px, 400);
 	position: relative;
-	background-color: #ffffff;
+	background-color: #f1f5f6;
 	padding: 0;
+	min-width: 320px;
+	padding-left: 20px;
+	padding-right: 20px;
 }
 
 a {
@@ -22,4 +25,18 @@ input,
 select,
 img {
 	outline: none;
+}
+
+.scale {
+	display: none;
+}
+
+@media ($wide-widths) {
+
+	body {
+		min-width: 885px;
+		padding: 0;
+		padding-top: 30px;
+	}
+
 }

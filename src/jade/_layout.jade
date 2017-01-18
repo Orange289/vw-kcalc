@@ -12,14 +12,14 @@ html(lang='ru')
 	head
 		+ head(array,arrayFav)
 	body(class='#{array.body_class}')
-		+header
-		main.page_main(class='#{array.layout_mod}')
-			.tabs.tabs_programs.page_main__programs.programs
-				+ tabs(arrayTabs_1)
-				block filters
-				block guarantee
-				block standard
-
-		block request
-		+ scripts
-		block popup
+		.wrapper
+			+ header
+			main.page_main(class='#{array.layout_mod}')
+				.tabs.tabs_programs.page_main__programs.programs
+					+ tabs(arrayTabs_1)
+					block filters
+					block guarantee
+					block standard
+				block request
+			+ scripts
+			block popup

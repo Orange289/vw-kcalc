@@ -1,0 +1,11 @@
+.wrapper {
+	margin: 0 auto;
+}
+
+@media ($wide-widths) {
+
+	.wrapper {
+		width: 885px;
+	}
+
+}
