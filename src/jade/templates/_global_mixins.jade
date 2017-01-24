@@ -13,15 +13,13 @@ mixin head(array,arrayFav)
 	link(rel='apple-touch-icon', href='#{arrayFav.src_apple}')
 	script(src='js/font-loader.js')
 	link(rel='stylesheet' media='all' href='css/style.css')
+	link(href='http://ajax.googleapis.com/ajax/libs/jqueryui/1.12.0/themes/base/jquery-ui.css' rel='stylesheet')
+
 
 mixin scripts
-	if jQuery
-		<script src='//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
-		<script>window.jQuery || document.write('<script src="js/jquery-1.11.1.min.js"><\/script>')</script>
-	if jQueryUI
-		<script src='//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js'></script>
-		<script>window.jQuery.ui || document.write('<script src="js/jquery-ui.min.js"><\/script>')</script>
-	script(src='js/all.js')
+	script(src="js/jquery-1.11.1.min.js")
+	script(src='http://ajax.googleapis.com/ajax/libs/jqueryui/1.12.0/jquery-ui.min.js')
+	script(src='js/chosen.jquery.js')
 	script(src='js/main.js')
 
 mixin form_element(config)
@@ -56,17 +54,17 @@ mixin form_element(config)
 						span.form__field_file-text #{config.title}
 						span.form__field_file-butt Choose File
 				if config.type === 'select'
-					select.form__select(id=config.id class='#{config.class_array.elem_class}' data-placeholder=config.placeholder)
+					select(id=config.id class='#{config.class_array.elem_class}' data-placeholder=config.placeholder)
 						each option in config.options
 							option(value=option)= option
 					block
 	if config.type === 'checkbox' || config.type === 'radio'
-		label.form__label(class=config.class_array.label_mod) #{config.title}
+		label.form__label(class=config.class_array.label_mod)
 			if config.checked
 				input(name=config.name type=config.type class='#{config.class_array.elem_class} #{config.add_class}' checked='checked')
 			else
 				input(name=config.name type=config.type class='#{config.class_array.elem_class} #{config.add_class}')
-			span
+			span #{config.title}
 
 mixin loop_while(counter)
 	- i=0;

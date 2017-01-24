@@ -12,134 +12,196 @@
     <link rel="apple-touch-icon" href="img/apple-touch-icon.png"/>
     <script src="js/font-loader.js"></script>
     <link rel="stylesheet" media="all" href="css/style.css"/>
+    <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.12.0/themes/base/jquery-ui.css" rel="stylesheet"/>
   </head>
   <body class="page_body">
-    <div class="wrapper">
-      <header class="page_header">
-        <h1 class="page_body__title">Кредитный калькулятор</h1>
-      </header>
-      <main class="page_main">
+    <header class="page_header">
+      <h1 class="page_body__title">Кредитный калькулятор</h1>
+    </header>
+    <main class="page_main">
+      <div class="wrapper">
         <div class="tabs tabs_programs page_main__programs programs">
-          <input type="radio" name="types" id="tab-first" checked="checked" class="tabs__radio"/>
-          <label for="tab-first" class="tabs__label">Программа гарант</label>
-          <input type="radio" name="types" id="tab-second" class="tabs__radio"/>
-          <label for="tab-second" class="tabs__label">Стандартный кредит</label>
-          <div class="page_main__program page_main__program_guarantee programs__content programs__content_guarantee">
+          <div class="tabs__wrapper">
+            <input type="radio" name="types" id="t1" checked="checked" class="tabs__radio tabs__radio_main"/>
+            <label for="t1" class="tabs__option">Программа гарант</label>
+            <input type="radio" name="types" id="t2" class="tabs__radio tabs__radio_main"/>
+            <label for="t2" class="tabs__option">Стандартный кредит</label>
+          </div>
+          <div class="programs__content">
             <div class="programs__selects car_filters">
-              <dl class="form__cell select_wrap ">
-                <dt class="form__label">
-                  <label for="model">Модель</label>
-                </dt>
-                <dd class="form__field-wrap">
-                  <select id="model" data-placeholder="" class="form__select js_chosen_select">
-                    <option value="Tiguan">Tiguan</option>
-                    <option value="Tiguan">Tiguan</option>
-                    <option value="Tiguan">Tiguan</option>
-                  </select>
-                </dd>
-              </dl>
-              <dl class="form__cell select_wrap ">
-                <dt class="form__label">
-                  <label for="config">Комплектация</label>
-                </dt>
-                <dd class="form__field-wrap">
-                  <select id="config" data-placeholder="" class="form__select js_chosen_select">
-                    <option value="Allstar">Allstar</option>
-                    <option value="Allstar">Allstar</option>
-                    <option value="Allstar">Allstar</option>
-                  </select>
-                </dd>
-              </dl>
-              <div class="programs__img"></div>
+              <div class="form__element">
+                <dl class="form__cell form__cell_filters">
+                  <dt class="form__label">
+                    <label for="model">Модель</label>
+                  </dt>
+                  <dd class="form__field-wrap select_wrap form__select form__select_filters">
+                    <select id="model" data-placeholder="" class="js_chosen_select">
+                      <option value="Tiguan">Tiguan</option>
+                      <option value="Tiguan">Tiguan</option>
+                      <option value="Tiguan">Tiguan</option>
+                    </select>
+                  </dd>
+                </dl>
+                <svg class="icon icon_select icon_blue">
+                  <use xlink:href="img/sprite.svg#i-up_down"></use>
+                </svg>
+              </div>
+              <div class="form__element">
+                <dl class="form__cell form__cell_filters">
+                  <dt class="form__label">
+                    <label for="config">Комплектация</label>
+                  </dt>
+                  <dd class="form__field-wrap select_wrap form__select form__select_filters">
+                    <select id="config" data-placeholder="" class="js_chosen_select">
+                      <option value="Allstar">Allstar</option>
+                      <option value="Allstar">Allstar</option>
+                      <option value="Allstar">Allstar</option>
+                    </select>
+                  </dd>
+                </dl>
+                <svg class="icon icon_select icon_blue">
+                  <use xlink:href="img/sprite.svg#i-up_down"></use>
+                </svg>
+              </div>
+              <div class="programs__img"><b>Tiguan</b><img src="img/img-tiguan.png"></div>
               <div class="programs__prices prices">
-                <div class="prices__cost">
+                <div class="prices__item prices__item_cost">
                   <dl class="form__cell programs__input programs__input_cost">
+                    <dd class="form__field-wrap">
+                      <input value="10 319 000" type="text" id="cost" placeholder="" disabled="disabled" class="form__text prices__value prices__value_cost form__text_disabled ">
+                      <svg class="icon icon_ruble">
+                        <use xlink:href="img/sprite.svg#i-ruble"></use>
+                      </svg>
+                    </dd>
                     <dt class="form__label form__label_price">
                       <label for="cost">Стоимость автомобиля</label>
+                      <svg class="icon icon_edit icon_blue btn_edit">
+                        <use xlink:href="img/sprite.svg#i-pencil"></use>
+                      </svg>
                     </dt>
-                    <dd class="form__field-wrap">
-                      <input value="10 319 000" type="text" id="cost" placeholder="" disabled="disabled" class="form__text prices__value prices__value_cost form__text_disabled "/><span>Р</span>
-                    </dd>
                   </dl>
                 </div>
-                <div class="prices__payment"><b class="prices__value prices__value_pay">170 800 Р</b><span class="form__label form__label_price">Ежемесячный платеж</span></div>
+                <div class="prices__item prices__item_payment"><b class="prices__value prices__value_pay">170 800
+                    <svg class="icon icon_ruble icon_blue">
+                      <use xlink:href="img/sprite.svg#i-ruble"></use>
+                    </svg></b><span class="form__label form__label_price">Ежемесячный платеж</span></div>
               </div>
               <div class="programs__slider range range_deposit">
                 <label for="deposit" class="form__label">Первоначальный взнос</label>
-                <div class="range__slider range__slider_deposit"></div>
-                <input type="text" value="0" pattern="[0-9]" class="range__input range__input_deposit"/>
+                <div id="range-deposit" class="range__slider range__slider_deposit"></div>
+                <input type="text" value="0" pattern="[0-9]" id="deposit" class="range__input range__input_deposit form__text"/>
+                <svg class="icon icon_ruble icon_gray icon_ruble_slider">
+                  <use xlink:href="img/sprite.svg#i-ruble"></use>
+                </svg>
                 <div class="scale"><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>10</span><span>11</span><span>12</span><span>13</span><span>14</span><span>15</span><span>16</span><span>17</span><span>18</span><span>19</span><span>20</span><span>21</span><span>22</span><span>23</span><span>24</span><span>25</span><span>26</span><span>27</span><span>28</span><span>29</span><span>30</span><span>31</span><span>32</span><span>33</span><span>34</span><span>35</span><span>36</span><span>37</span><span>38</span><span>39</span><span>40</span><span>41</span><span>42</span><span>43</span><span>44</span><span>45</span><span>46</span><span>47</span><span>48</span><span>49</span><span>50</span><span>51</span><span>52</span><span>53</span><span>54</span><span>55</span><span>56</span><span>57</span><span>58</span><span>59</span><span>60</span><span>61</span><span>62</span><span>63</span><span>64</span><span>65</span><span>66</span><span>67</span><span>68</span><span>69</span><span>70</span><span>71</span><span>72</span><span>73</span><span>74</span><span>75</span><span>76</span><span>77</span><span>78</span><span>79</span><span>80</span><span>81</span><span>82</span><span>83</span><span>84</span><span>85</span><span>86</span><span>87</span><span>88</span><span>89</span><span>90</span><span>91</span><span>92</span><span>93</span><span>94</span><span>95</span><span>96</span><span>97</span><span>98</span><span>99</span><span>100</span>
                 </div>
               </div>
               <div class="programs__credit_term">
-                <dl class="form__cell select_wrap ">
-                  <dt class="form__label">
-                    <label for="credit">Срок кредитования</label>
-                  </dt>
-                  <dd class="form__field-wrap">
-                    <select id="credit" data-placeholder="" class="form__select js_chosen_select">
-                      <option value="12 месяцев">12 месяцев</option>
-                      <option value="12 месяцев">12 месяцев</option>
-                      <option value="12 месяцев">12 месяцев</option>
-                    </select>
-                  </dd>
-                </dl>
+                <div class="form__element">
+                  <dl class="form__cell form__cell_filters">
+                    <dt class="form__label">
+                      <label for="credit">Срок кредитования</label>
+                    </dt>
+                    <dd class="form__field-wrap select_wrap form__select form__select_filters">
+                      <select id="credit" data-placeholder="" class="js_chosen_select">
+                        <option value="12 месяцев">12 месяцев</option>
+                        <option value="12 месяцев">12 месяцев</option>
+                        <option value="12 месяцев">12 месяцев</option>
+                      </select>
+                    </dd>
+                  </dl>
+                  <svg class="icon icon_select icon_blue">
+                    <use xlink:href="img/sprite.svg#i-up_down"></use>
+                  </svg>
+                </div>
               </div>
             </div>
           </div>
-          <div id="tab-content-1" class="tabs__content">
+          <div id="tab-content-1" class="tabs__content programs__content_guarantee t1">
             <div class="range range_rest">
               <label for="rest" class="form__label">Остаточный платеж</label>
-              <div class="range__slider range__slider_rest"></div>
-              <input type="text" value="0" pattern="[0-9]" class="range__input range__input_rest"/>
+              <div id="range-rest" class="range__slider range__slider_rest"></div>
+              <input type="text" value="0" pattern="[0-9]" id="rest" class="range__input range__input_rest form__text"/>
+              <svg class="icon icon_ruble icon_gray icon_ruble_slider">
+                <use xlink:href="img/sprite.svg#i-ruble"></use>
+              </svg>
               <div class="scale"><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>10</span><span>11</span><span>12</span><span>13</span><span>14</span><span>15</span><span>16</span><span>17</span><span>18</span><span>19</span><span>20</span><span>21</span><span>22</span><span>23</span><span>24</span><span>25</span><span>26</span><span>27</span><span>28</span><span>29</span><span>30</span><span>31</span><span>32</span><span>33</span><span>34</span><span>35</span><span>36</span><span>37</span><span>38</span><span>39</span><span>40</span><span>41</span><span>42</span><span>43</span><span>44</span><span>45</span><span>46</span><span>47</span><span>48</span><span>49</span><span>50</span><span>51</span><span>52</span><span>53</span><span>54</span><span>55</span><span>56</span><span>57</span><span>58</span><span>59</span><span>60</span><span>61</span><span>62</span><span>63</span><span>64</span><span>65</span><span>66</span><span>67</span><span>68</span><span>69</span><span>70</span><span>71</span><span>72</span><span>73</span><span>74</span><span>75</span><span>76</span><span>77</span><span>78</span><span>79</span><span>80</span><span>81</span><span>82</span><span>83</span><span>84</span><span>85</span><span>86</span><span>87</span><span>88</span><span>89</span><span>90</span><span>91</span><span>92</span><span>93</span><span>94</span><span>95</span><span>96</span><span>97</span><span>98</span><span>99</span><span>100</span>
               </div>
             </div>
             <div class="payment">
               <h1 class="page_body__title payment__title">Низкий ежемесячный платеж</h1><span class="payment__subtitle">Условия кредитования</span>
-              <div class="payments__comparison">
-                <div class="payments__program payments__program_guarantee">
-                  <div class="payments__price">17 800 р</div>
-                  <div class="payments__label">Программа гарант</div>
+              <div class="payment__comparison">
+                <div class="payment__program payment__program_guarantee">
+                  <div class="payment__price payment__price_guarantee"><span>17 800</span>
+                    <svg class="icon_ruble icon_white">
+                      <use xlink:href="img/sprite.svg#i-ruble"></use>
+                    </svg>
+                  </div>
+                  <div class="payment__label payment__label_guarantee">Программа гарант</div>
                 </div>
-                <div class="payments__program payments__program_standard">
-                  <div class="payments__price">1 319 000 р</div>
-                  <div class="payments__label">Стандартный кредит</div>
+                <div class="payment__program payment__program_standard">
+                  <div class="payment__price payment__price_standard"><span>1 319 000</span>
+                    <svg class="icon_ruble icon_white">
+                      <use xlink:href="img/sprite.svg#i-ruble"></use>
+                    </svg>
+                  </div>
+                  <div class="payment__label payment__label_standard">Стандартный кредит</div>
                 </div>
               </div>
-              <div class="payments__total"><b>3 885 889 р</b><span>Выкупная стоимость автомобиля</span></div>
+              <div class="payment__total"><b>3 885 889</b>
+                <svg class="icon_ruble icon_blue">
+                  <use xlink:href="img/sprite.svg#i-ruble"></use>
+                </svg><span class="payment__label payment__label_total">Выкупная стоимость автомобиля</span>
+              </div>
             </div>
           </div>
-          <div id="tab-content-2" class="tabs__content">
-            <dl class="form__cell">
-              <dt class="form__label">
-                <label for="credit_program">Программа</label>
-              </dt>
-              <dd class="form__field-wrap">
-                <select id="credit_program" data-placeholder="" class="form__select">
-                  <option value="Кредит на приобретение транспортного средства">Кредит на приобретение транспортного средства</option>
-                  <option value="Кредит на приобретение транспортного средства">Кредит на приобретение транспортного средства</option>
-                  <option value="Кредит на приобретение транспортного средства">Кредит на приобретение транспортного средства</option>
-                </select>
-              </dd>
-            </dl>
+          <div id="tab-content-2" class="tabs__content programs__content_standard t2">
+            <div class="form__element">
+              <dl class="form__cell form__cell_filters">
+                <dt class="form__label">
+                  <label for="credit_program">Программа</label>
+                </dt>
+                <dd class="form__field-wrap select_wrap form__select form__select_filters">
+                  <select id="credit_program" data-placeholder="" class="js_chosen_select">
+                    <option value="Кредит на приобретение транспортного средства">Кредит на приобретение транспортного средства</option>
+                    <option value="Кредит на приобретение транспортного средства">Кредит на приобретение транспортного средства</option>
+                    <option value="Кредит на приобретение транспортного средства">Кредит на приобретение транспортного средства</option>
+                  </select>
+                </dd>
+              </dl>
+              <svg class="icon icon_select icon_blue">
+                <use xlink:href="img/sprite.svg#i-up_down"></use>
+              </svg>
+            </div>
             <div class="tabs tabs_docs">
-              <input type="radio" name="docs" id="tab-third" checked="checked" class="tabs__radio"/>
-              <label for="tab-third" class="tabs__label">По 2-м документам</label>
-              <input type="radio" name="docs" id="tab-forth" class="tabs__radio"/>
-              <label for="tab-forth" class="tabs__label">Полный комплект</label>
-              <div id="tab-content-3" class="documents documents_two tabs__content">
-                <div class="documents__item"><span>Платеж в месяц</span><b>127 800</b></div>
-                <div class="documents__item"><span>Ставка</span><b>19%</b></div>
-                <div class="documents__item"><span>Стоимость кредита</span><b>770 100</b></div>
+              <div class="tabs__wrapper tabs__wrapper_docs">
+                <input type="radio" name="docs" id="t3" checked="checked" class="tabs__radio tabs__radio_int"/>
+                <label for="t3" class="tabs__option">По 2-м документам</label>
+                <input type="radio" name="docs" id="t4" class="tabs__radio tabs__radio_int"/>
+                <label for="t4" class="tabs__option">Полный комплект</label>
+              </div>
+              <div id="tab-content-3" class="documents documents_two tabs__content t3">
+                <div class="documents__item documents__item_1"><span>Платеж в месяц</span><b>127 800</b>
+                  <svg class="icon_ruble icon_gray">
+                    <use xlink:href="img/sprite.svg#i-ruble"></use>
+                  </svg>
+                </div>
+                <div class="documents__item documents__item_2"><span>Ставка</span><b>19%</b></div>
+                <div class="documents__item documents__item_3"><span>Стоимость кредита</span><b>770 100</b>
+                  <svg class="icon_ruble icon_gray">
+                    <use xlink:href="img/sprite.svg#i-ruble"></use>
+                  </svg>
+                </div>
               </div>
             </div>
           </div>
         </div>
-        <div class="request">
-          <h1 class="page_body__title request title">Заявка на получение кредита</h1>
+      </div>
+      <div class="request">
+        <div class="wrapper">
+          <h1 class="page_body__title request__title">Заявка на получение кредита</h1>
           <form action="#" method="post" class="request__form">
-            <dl class="form__cell form__cell_text_name">
+            <dl class="form__cell form__cell_text form__cell_text_name">
               <dt class="form__label form__label_request">
                 <label for="name">Имя</label>
               </dt>
@@ -147,13 +209,13 @@
                 <input type="text" id="name" placeholder="Имя" class="form__text request__input request__input_name "/>
               </dd>
             </dl>
-            <label class="form__label form__label_radio">Г-н
-              <input name="sex" type="radio" checked="checked" class="form__radio request__radio "/><span></span>
+            <label class="form__label form__label_radio_request">
+              <input name="sex" type="radio" checked="checked" class="form__radio request__radio "/><span>Г-н</span>
             </label>
-            <label class="form__label form__label_radio">Г-жа
-              <input name="sex" type="radio" class="form__radio request__radio "/><span></span>
+            <label class="form__label form__label_radio_request">
+              <input name="sex" type="radio" class="form__radio request__radio "/><span>Г-жа</span>
             </label>
-            <dl class="form__cell form__cell_text_surname">
+            <dl class="form__cell form__cell_text form__cell_text_surname">
               <dt class="form__label form__label_request">
                 <label for="surname">Фамилия</label>
               </dt>
@@ -161,7 +223,7 @@
                 <input type="text" id="surname" placeholder="Фамилия" class="form__text request__input request__input_surname "/>
               </dd>
             </dl>
-            <dl class="form__cell form__cell_text_email">
+            <dl class="form__cell form__cell_text form__cell_text_email">
               <dt class="form__label form__label_request">
                 <label for="email">E-mail</label>
               </dt>
@@ -169,7 +231,7 @@
                 <input type="email" id="email" placeholder="E-mail" class="form__text request__input request__input_email "/>
               </dd>
             </dl>
-            <dl class="form__cell form__cell_text_tel">
+            <dl class="form__cell form__cell_text form__cell_text_tel">
               <dt class="form__label form__label_request">
                 <label for="tel">Телефон</label>
               </dt>
@@ -177,51 +239,79 @@
                 <input type="tel" id="tel" placeholder="Телефон" class="form__text request__input request__input_tel "/>
               </dd>
             </dl>
-            <dl class="form__cell select_wrap form__cell_select_city">
-              <dt class="form__label">
-                <label for="city">Город</label>
-              </dt>
-              <dd class="form__field-wrap">
-                <select id="city" data-placeholder="" class="form__select js_chosen_select">
-                  <option value="Набережные Челны">Набережные Челны</option>
-                  <option value="Москва">Москва</option>
-                  <option value="Санкт-Петербург">Санкт-Петербург</option>
-                </select>
-              </dd>
-            </dl>
-            <dl class="form__cell select_wrap form__cell_select_dealer">
-              <dt class="form__label">
-                <label for="dealer">Дилер</label>
-              </dt>
-              <dd class="form__field-wrap">
-                <select id="dealer" data-placeholder="" class="form__select js_chosen_select">
-                  <option value="Genser">Genser</option>
-                  <option value="Genser">Genser</option>
-                  <option value="Genser">Genser</option>
-                </select>
-              </dd>
-            </dl>
-            <button value="На карте" class="btn btn_map"></button>
+            <div class="form__element">
+              <dl class="form__cell form__cell_select form__cell_select_city">
+                <dt class="form__label">
+                  <label for="city">Город</label>
+                </dt>
+                <dd class="form__field-wrap select_wrap form__select form__select_city">
+                  <select id="city" data-placeholder="" class="js_chosen_select">
+                    <option value="Набережные Челны">Набережные Челны</option>
+                    <option value="Москва">Москва</option>
+                    <option value="Санкт-Петербург">Санкт-Петербург</option>
+                  </select>
+                </dd>
+              </dl>
+              <svg class="icon icon_select icon_blue">
+                <use xlink:href="img/sprite.svg#i-up_down"></use>
+              </svg>
+            </div>
+            <div class="form__element">
+              <dl class="form__cell form__cell_select form__cell_select_dealer">
+                <dt class="form__label">
+                  <label for="dealer">Дилер</label>
+                </dt>
+                <dd class="form__field-wrap select_wrap form__select form__select_dealer">
+                  <select id="dealer" data-placeholder="" class="js_chosen_select">
+                    <option value="Genser">Genser</option>
+                    <option value="Genser">Genser</option>
+                    <option value="Genser">Genser</option>
+                  </select>
+                </dd>
+              </dl>
+              <svg class="icon icon_select icon_blue">
+                <use xlink:href="img/sprite.svg#i-up_down"></use>
+              </svg>
+            </div><a href="#" class="btn btn_map js_fancybox_noclose">На карте
+              <svg class="icon icon_loc icon_blue">
+                <use xlink:href="img/sprite.svg#i-location"></use>
+              </svg></a>
             <div class="request__agree">
-              <label class="form__label form__label_checkbox">Согласие на обработку персональных данных с целью обработки запроса
-                <input type="checkbox" checked="checked" class="form__checkbox request__checkbox "/><span></span>
+              <label class="form__label form__label_checkbox">
+                <input type="checkbox" checked="checked" class="form__checkbox request__checkbox "/><span>Согласие на обработку персональных данных с целью обработки запроса</span>
               </label>
-              <label class="form__label form__label_checkbox">Согласие на обработку персональных данных с целью дальнейшей коммуникации
-                <input type="checkbox" checked="checked" class="form__checkbox request__checkbox "/><span></span>
+              <label class="form__label form__label_checkbox">
+                <input type="checkbox" checked="checked" class="form__checkbox request__checkbox "/><span>Согласие на обработку персональных данных с целью дальнейшей коммуникации</span>
               </label>
             </div>
-            <button value="Отправить" class="btn btn_send"></button>
+            <button type="submit" class="btn btn_send">Отправить</button>
           </form>
         </div>
-      </main>
-      <script src='//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
-      <script>window.jQuery || document.write('<script src="js/jquery-1.11.1.min.js"><\/script>')</script>
-      <script src="js/all.js"></script>
-      <script src="js/main.js"></script>
-      <div class="popup">
-        <div class="popup__request"><b>Оставить заявку</b>
-          <button class="popup__btn popup__btn_open"></button>
-          <h3 class="popup__title">Tiguan</h3><span class="popup__subtitle">Стоимость автомобиля</span><span class="popup__price">1 319 000 Р</span><a href="#" class="popup__btn popup__btn_save">Сохранить расчет</a><a href="#" class="popup__btn popup__btn_requirements">Требования к заемщику</a>
+      </div>
+    </main>
+    <script src="js/jquery-1.11.1.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.12.0/jquery-ui.min.js"></script>
+    <script src="js/chosen.jquery.js"></script>
+    <script src="js/main.js"></script>
+    <div class="popup">
+      <div class="popup__request">
+        <div class="popup__head">
+          <div class="wrapper"><b>Оставить заявку</b>
+            <button class="btn btn_popup btn_popup_open"></button>
+          </div>
+        </div>
+        <h3 class="popup__title">Tiguan</h3><span class="popup__subtitle">Стоимость автомобиля</span><span class="popup__price">1 319 000 Р</span>
+        <div class="popup__actions">
+          <div class="wrapper">
+            <div class="popup__action popup__action_save"><a href="#" class="popup__btn popup__btn_save">
+                <svg class="icon icon_save">
+                  <use xlink:href="img/sprite.svg#i-save"></use>
+                </svg></a><a href="#" class="popup__link">Сохранить расчет</a></div>
+            <div class="popup__action popup__action_req"><a href="#" class="popup__btn popup__btn_req">
+                <svg class="icon icon_brochure">
+                  <use xlink:href="img/sprite.svg#i-brochure"></use>
+                </svg></a><a href="#" class="popup__link">Требования к заемщику</a></div>
+          </div>
         </div>
       </div>
     </div>

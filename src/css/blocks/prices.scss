@@ -1,0 +1,50 @@
+.prices {
+	width: 290px;
+}
+
+.prices__item {
+	display: inline-block;
+	vertical-align: top;
+
+	&_cost {
+		position: relative;
+		width: 135px;
+
+		&::after {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 143px;
+			@include size(1px, 100%);
+			background-color: #d8d8d8;
+		}
+
+	}
+
+	&_payment {
+		width: 130px;
+		padding-top: 4px;
+		padding-left: 17px;
+	}
+
+}
+
+.prices__value {
+	@include font-param(24px, 18px, 700);
+
+	&_cost {
+		border: none;
+		background: none;
+		padding: 0;
+		width: 119px;
+		margin-bottom: 6px;
+	}
+
+	&_pay {
+		color: #00b1eb;
+		display: block;
+		margin-bottom: 9px;
+
+	}
+
+}

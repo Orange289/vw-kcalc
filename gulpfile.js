@@ -43,7 +43,7 @@ var path = {
 	},
 	src: { //Пути откуда брать исходники
 		jade: 'src/jade/',
-		js: 'src/js/*.js',
+		js: 'src/js/**/*.js',
 		sass: 'src/css/**/*.scss',
 		sassEntry: 'src/css/base.scss',
 		img: 'src/img/**/*.*',
@@ -104,6 +104,17 @@ gulp.task('style:build', function () {
 				.pipe(browserSync.stream());
 });
 
+//svg sprite
+
+gulp.task('svgsprite', function() {
+	return gulp.src(path.src.svg)
+		.pipe(svgstore({
+			inlineSvg: true
+		}))
+		.pipe(rename('sprite.svg'))
+		.pipe(gulp.dest(path.build.img));
+});
+
 gulp.task('image:build', function() {
 	gulp.src(path.src.img)
 			.pipe(plumber())
@@ -118,17 +129,6 @@ gulp.task('image:build', function() {
 			.pipe(browserSync.stream());
 })
 
-//svg sprite
-
-gulp.task('svgsprite', function() {
-	return gulp.src(path.src.svg)
-		.pipe(svgstore({
-			inlineSvg: true
-		}))
-		.pipe(svgmin())
-		.pipe(rename('sprite.svg'))
-		.pipe(gulp.dest(path.build.img));
-});
 
 //
 
@@ -145,7 +145,7 @@ gulp.task('build', [
     'style:build',
     'fonts:build',
     'image:build',
-		'svgsprite'
+	'svgsprite'
 ]);
 
 gulp.task('watch', function(){

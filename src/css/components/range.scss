@@ -1,0 +1,22 @@
+.range {
+	width: 100%;
+	position: relative;
+
+	&_rest {
+		margin-bottom: 36px;
+	}
+
+}
+
+.range__input {
+	width: 264px;
+	margin-top: 8px;
+}
+
+.range__slider {
+	position: absolute !important;
+	top: 62px;
+	left: 17px;
+	width: 246px !important;
+	margin: auto;
+}

@@ -1,0 +1,63 @@
+.documents__item {
+	position: relative;
+	padding-left: 14px;
+
+	&::after {
+		content: '';
+		position: absolute;
+		top: 100%;
+		left: 0;
+		@include size(100%, 1px);
+		background-color: #d8d8d8;
+	}
+
+	span {
+		@include font-param(13px, 15px, 700);
+		text-transform: uppercase;
+		display: inline-block;
+		vertical-align: top;
+	}
+
+	b {
+		@include font-param(30px, 25px, 700);
+		display: inline-block;
+		vertical-align: top;
+	}
+
+	&_1 {
+		padding-bottom: 19px;
+		margin-bottom: 25px;
+
+		span {
+			width: 58px;
+			margin-right: 68px;
+		}
+
+	}
+
+	&_2 {
+		padding-bottom: 17px;
+		margin-bottom: 20px;
+
+		span {
+			width: 62px;
+			margin-right: 64px;
+		}
+
+	}
+
+	&_3 {
+
+		span {
+			width: 96px;
+			margin-right: 32px;
+
+		}
+
+		&::after {
+			display: none;
+		}
+
+	}
+
+}

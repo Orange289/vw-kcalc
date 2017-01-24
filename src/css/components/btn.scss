@@ -1,14 +1,59 @@
 .btn {
-  text-align: center;
+	text-align: center;
 	text-decoration: none;
 	border: none;
 	outline: none;
 	cursor: pointer;
 
-  &--disabled {
-	background-color: #dddddd;
-	color: #ffffff;
-	cursor: default;
+	&_disabled {
+		background-color: #dddddd;
+		color: #ffffff;
+		cursor: default;
   }
+
+	&_edit {
+		cursor: pointer;
+	}
+
+	&_map {
+		color: $blue;
+		display: block;
+		padding-top: 14px;
+		padding-bottom: 11px;
+		background-color: $white;
+		border: 1px solid #cfd7d9;
+		border-radius: 3px;
+		position: relative;
+		margin-bottom: 23px;
+		width: 278px;
+	}
+
+	&_send {
+		font-family: 'vwheadoffice-bold', sans-serif;
+		@include font-param(17px, 13px, 700, $white);
+		padding-top: 15px;
+		padding-bottom: 15px;
+		margin-bottom: 63px;
+		width: 280px;
+		background-color: $blue;
+		border-radius: 3px;
+	}
+
+	&_popup {
+		display: inline-block;
+
+		&_open {
+			background: url('../img/icons/i-more.svg') no-repeat;
+			@include size(34px, 9px);
+			margin-left: 75px;
+		}
+
+		&_close {
+			background: url('../img/icons/i-close.svg') no-repeat;
+			@include size(20px);
+			margin-left: 89px;
+		}
+
+	}
 
 }

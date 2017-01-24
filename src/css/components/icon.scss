@@ -1,0 +1,60 @@
+.icon {
+
+	&_ruble {
+		@include size(11px, 12px);
+
+		&_slider {
+			position: absolute;
+			top: 38px;
+			left: 83px;
+		}
+
+	}
+
+	&_edit {
+		@include size(15px, 16px);
+	}
+
+	&_blue {
+		fill: $blue;
+	}
+
+	&_white {
+		fill: $white;
+	}
+
+	&_gray {
+		fill: $graytext;
+	}
+
+	&_loc {
+		@include size(9px, 13px);
+		position: absolute;
+		top: 15px;
+		left: 95px;
+	}
+
+	&_select {
+		position: absolute;
+		@include size(13px, 18px);
+		top: 35px;
+		left: 254px;
+	}
+
+	&_save {
+		@include size(18px);
+		position: absolute;
+		top: 6px;
+		left: 6px;
+		fill: $white;
+	}
+
+	&_brochure {
+		@include size(17px, 18px);
+		position: absolute;
+		top: 6px;
+		left: 6px;
+		fill: $white;
+	}
+
+}

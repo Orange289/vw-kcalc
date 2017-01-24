@@ -1,0 +1,105 @@
+.payment__title {
+	text-align: left;
+	margin-bottom: 11px;
+}
+
+.payment__subtitle {
+	font-family: 'vwheadoffice-regular', sans-serif;
+	@include font-param(11px, 8px, 400, #808890);
+	text-transform: uppercase;
+	position: relative;
+	display: block;
+	padding-bottom: 36px;
+
+	&::after {
+		content: '1';
+		position: absolute;
+		top: -5px;
+		left: 140px;
+		@include font-param(8px, 13px, 700, $white);
+		@include size(13px);
+		text-align: center;
+		background-color: $blue;
+		border-radius: 50%;
+	}
+
+}
+
+.payment__comparison {
+	position: relative;
+	padding-bottom: 31px;
+	margin-bottom: 23px;
+
+	&::after {
+		content: '';
+		position: absolute;
+		top: 100%;
+		left: 0;
+		@include size(100%, 1px);
+		background-color: #d8d8d8;
+	}
+
+}
+
+.payment__program {
+
+	&_guarantee {
+		margin-bottom: 9px;
+	}
+
+}
+
+.payment__price {
+	@include font-param(30px, 23px, 700, $white);
+	display: inline-block;
+	vertical-align: top;
+	margin-right: 7px;
+	padding-left: 18px;
+	border-radius: 100px;
+	padding-top: 12px;
+	padding-bottom: 12px;
+
+	span {
+		margin-right: -5px;
+	}
+
+	&_guarantee {
+		padding-right: 21px;
+		background-color: $yellow;
+	}
+
+	&_standard {
+		padding-right: 27px;
+		background-color: #d8d8d8;
+	}
+
+}
+
+.payment__label {
+	font-family: 'vwheadoffice-bold', sans-serif;
+	@include font-param(10px, 10px, 700);
+	text-transform: uppercase;
+	display: inline-block;
+	vertical-align: top;
+	width: 91px;
+	margin-top: 11px;
+
+	&_standard {
+		width: 71px;
+	}
+
+	&_total {
+		display: block;
+		width: 172px;
+	}
+
+}
+
+.payment__total {
+	margin-bottom: 55px;
+
+	b {
+		@include font-param(40px, 40px, 700, $blue);
+	}
+
+}

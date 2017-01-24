@@ -1,0 +1,55 @@
+.request {
+	background-color: $bg2;
+	padding-top: 20px;
+}
+
+.request__title {
+	text-align: left;
+	color: $black;
+	margin-bottom: 25px;
+}
+
+.request__input {
+	width: 264px;
+
+	&_name {
+		width: 129px;
+	}
+
+}
+
+.request__radio {
+	display: none;
+}
+
+.request__radio + span {
+	position: absolute;
+	font-family: 'vwtextoffice-regular', sans-serif;
+	@include font-param(16px, 23px, 400);
+	cursor: pointer;
+	display: inline-block;
+	padding-top: 5px;
+	padding-bottom: 9px;
+	padding-left: 21px;
+	padding-right: 23px;
+	background-color: $white;
+	border-top: 1px solid #cfd7d9;
+	border-bottom: 1px solid #cfd7d9;
+	position: relative;
+	cursor: pointer;
+}
+
+.form__label_radio_request:last-of-type .request__radio + span {
+	padding-left: 14px;
+	padding-right: 17px;
+	margin-left: -4px;
+	border-right: 1px solid #cfd7d9;
+	border-left: 1px solid #cfd7d9;
+	border-top-right-radius: 3px;
+	border-bottom-right-radius: 3px;
+}
+
+.request__radio:checked + span {
+	background-color: $blue;
+	color: $white;
+}

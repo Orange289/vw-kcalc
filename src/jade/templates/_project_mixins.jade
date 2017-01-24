@@ -3,8 +3,10 @@ mixin header
 		h1.page_body__title Кредитный калькулятор
 mixin slider(array)
 	label.form__label(for='#{array.id}') #{array.title}
-	.range__slider(class='range__slider_#{array.mod}')
-	input.range__input(class='range__input_#{array.mod}' type='text' value='0' pattern='[0-9]')
+	.range__slider(class='range__slider_#{array.mod}' id='#{array.id_slider}')
+	input.range__input(class='range__input_#{array.mod} form__text' type='text' value='0' pattern='[0-9]' id='#{array.id}')
+	svg(class='icon icon_ruble icon_gray icon_ruble_slider')
+		use(xlink:href='img/sprite.svg#i-ruble')
 	.scale
 		- var item = 1
 		while item < 101

@@ -1,20 +1,28 @@
-.tabs__content#tab-content-2
-	+ form_element({
-		type:'select',
-		class_array: defaule_select_1,
-		id:'credit_program',
-		title:'Программа',
-		options:['Кредит на приобретение транспортного средства', 'Кредит на приобретение транспортного средства', 'Кредит на приобретение транспортного средства']
-	})
+.tabs__content.programs__content_standard.t2#tab-content-2
+	.form__element
+		+ form_element({
+			type:'select',
+			class_array: default_select_1,
+			id:'credit_program',
+			title:'Программа',
+			options:['Кредит на приобретение транспортного средства', 'Кредит на приобретение транспортного средства', 'Кредит на приобретение транспортного средства']
+		})
+		svg(class='icon icon_select icon_blue')
+			use(xlink:href='img/sprite.svg#i-up_down')
 	.tabs.tabs_docs
-		+ tabs(arrayTabs_2)
-		.documents.documents_two.tabs__content#tab-content-3
-			.documents__item
+		.tabs__wrapper.tabs__wrapper_docs
+			+ tabs(arrayTabs_2)
+		.documents.documents_two.tabs__content.t3#tab-content-3
+			.documents__item.documents__item_1
 				span Платеж в месяц
 				b 127 800
-			.documents__item
+				svg(class='icon_ruble icon_gray')
+					use(xlink:href='img/sprite.svg#i-ruble')
+			.documents__item.documents__item_2
 				span Ставка
 				b 19%
-			.documents__item
+			.documents__item.documents__item_3
 				span Стоимость кредита
 				b 770 100
+				svg(class='icon_ruble icon_gray')
+					use(xlink:href='img/sprite.svg#i-ruble')
