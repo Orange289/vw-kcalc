@@ -96,3 +96,96 @@
 #tab-content-4 {
 	display: none;
 }
+
+
+@media ($wide-widths) {
+
+	.tabs_programs {
+
+		.tabs__wrapper {
+			@include size(435px, 58px);
+			border-radius: 100px;
+			margin-bottom: 52px;
+		}
+
+		.tabs__option {
+			font-size: 15px;
+			padding-top: 22px;
+			padding-bottom: 20px;
+			margin-right: 13px;
+
+			&:first-of-type {
+				padding-left: 23px;
+			}
+
+		}
+
+		.tabs__radio:checked + .tabs__option {
+			font-size: 15px;
+			@include size(207px, 28px);
+			margin-left: 11px;
+			padding-top: 13px;
+			border-radius: 100px;
+		}
+
+		.tabs__radio:checked + .tabs__option:last-of-type {
+			margin-left: 34px;
+		}
+
+	}
+
+	.tabs_docs {
+		float: left;
+		width: 316px;
+		padding-left: 32px;
+		margin-top: 115px;
+		margin-left: 90px;
+		position: relative;
+
+		&::before {
+			content: '';
+			position: absolute;
+			top: 5px;
+			left: 0;
+			@include size(1px, 100%);
+			border-left: 1px dashed #d8d8d8;
+		}
+
+		.tabs__wrapper {
+			@include size(316px, 43px);
+		}
+
+		.tabs__option {
+			font-size: 13px;
+			margin-right: 25px;
+			padding-left: 15px;
+			padding-top: 15px;
+
+			&:first-of-type {
+				margin-right: 5px;
+			}
+
+			&:last-of-type {
+				padding-left: 11px;
+			}
+
+		}
+
+		.tabs__radio:checked + .tabs__option {
+			font-size: 13px;
+			padding-left: 20px;
+			width: 131px;
+			margin-left: 0;
+		}
+
+		.tabs__radio:checked + .tabs__option:last-of-type {
+			margin-left: 4px;
+			padding-left: 0;
+		}
+
+
+	}
+
+
+
+}

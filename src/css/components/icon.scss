@@ -9,6 +9,10 @@
 			left: 83px;
 		}
 
+		&_popup {
+			display: none;
+		}
+
 	}
 
 	&_edit {
@@ -55,6 +59,34 @@
 		top: 6px;
 		left: 6px;
 		fill: $white;
+	}
+
+}
+
+
+@media ($wide-widths) {
+
+	.icon {
+
+		&_ruble.icon_blue {
+			margin-left: -6px;
+		}
+
+		&_ruble_popup {
+			display: inline;
+			@include size(8px, 9px);
+		}
+
+		&_edit {
+			position: absolute;
+			top: -31px;
+			left: 157px;
+		}
+
+		&_ruble_doc {
+			margin-top: 10px;
+		}
+
 	}
 
 }

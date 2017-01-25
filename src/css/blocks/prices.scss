@@ -48,3 +48,57 @@
 	}
 
 }
+
+
+@media ($wide-widths) {
+
+	.prices {
+		float: right;
+		width: 201px;
+		margin-left: 89px;
+		margin-right: 141px;
+	}
+
+	.prices__item {
+
+		&_cost {
+			position: relative;
+			width: 100%;
+			padding-bottom: 10px;
+			margin-bottom: 18px;
+
+			&::after {
+				content: '';
+				position: absolute;
+				top: 77px;
+				left: 0;
+				@include size(100%, 1px);
+				background-color: #d8d8d8;
+			}
+
+		}
+
+		&_payment {
+			padding-left: 0;
+			width: 100%;
+
+		}
+
+	}
+
+	.prices__value {
+		font-family: 'vwtextoffice-bold', sans-serif;
+
+		&_cost {
+			font-size: 30px;
+			width: 129px;
+		}
+
+		&_pay {
+			font-size: 48px;
+			width: 193px;
+		}
+
+	}
+
+}

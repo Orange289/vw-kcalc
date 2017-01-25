@@ -41,3 +41,18 @@
 		position:relative;
 	}
 }
+
+// маленький кружок с цифрой
+
+@mixin circle($content, $l, $t) {
+	content: $content;
+	position: absolute;
+	top: $t;
+	left: $l;
+	font-family: 'vwheadoffice-bold', sans-serif;
+	@include font-param(8px, 12px, 700, $white);
+	text-align: center;
+	@include size(13px);
+	background-color: $blue;
+	border-radius: 50%;
+}

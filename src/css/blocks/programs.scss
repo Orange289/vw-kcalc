@@ -40,10 +40,91 @@
 
 .programs__slider {
 	width: 280px;
-	margin: auto;
-	margin-bottom: 25px;
 }
 
 .programs__content {
 	margin-bottom: 5px;
+}
+
+.programs__subtitle {
+	display: none;
+}
+
+
+@media ($wide-widths) {
+
+	.programs {
+		@include clearfix;
+	}
+
+	.programs__img {
+		float: right;
+		width: 387px;
+		margin-right: 67px;
+
+		img {
+			@include size(387px, 135px);
+		}
+
+		b {
+			font-size: 90px;
+			top: 20px;
+			left: 53px;
+		}
+
+	}
+
+	.programs__info {
+		@include clearfix;
+	}
+
+	.programs__slider {
+		@include clearfix;
+
+	}
+
+	.programs__credit_term {
+		@include clearfix;
+	}
+
+	.programs__left {
+		float: left;
+		margin-left: 89px;
+		padding-top: 13px;
+		width: 254px;
+
+		&_standard {
+			margin-top: 115px;
+		}
+
+	}
+
+	.programs__slider {
+
+	}
+
+	.programs__content {
+
+		&_guarantee {
+			position: relative;
+		}
+
+	}
+
+	.programs__subtitle {
+		font-family: 'vwheadoffice-regular';
+		@include font-param(11px, 11px, 400);
+		text-transform: uppercase;
+		display: block;
+		float: right;
+		margin-right: 103px;
+		padding-right: 16px;
+		position: relative;
+
+		&::after {
+			@include circle('1', 141px, -3px);
+		}
+
+	}
+
 }

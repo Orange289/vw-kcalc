@@ -1,6 +1,6 @@
 .popup {
 	position: absolute;
-	top: 590px;
+	top: 620px;
 	left: 0;
 	width: 100%;
 
@@ -8,8 +8,8 @@
 
 .sticky {
 	position: fixed;
-  top: 0; left: 0;
-  z-index: 2;
+	top: 0; left: 0;
+	z-index: 7;
 }
 
 .popup__title,
@@ -99,4 +99,69 @@
 
 .popup__link {
 	@include font-param(11px, 11px, 400);
+}
+
+
+@media ($wide-widths) {
+
+	.popup {
+		top: 0;
+		background-color: #bdc3c6;
+		padding-bottom: 14px;
+	}
+
+	.popup__head {
+		display: none;
+	}
+
+	.popup__title {
+		@include font-param(24px, 18px, 700, #1d1f20);
+		display: block;
+		margin: 0;
+		margin-top: 12px;
+		margin-bottom: 3px;
+	}
+
+	.popup__subtitle,
+	.popup__price {
+		display: inline;
+	}
+
+	.popup__subtitle {
+		font-size: 11px;
+		margin-right: 5px;
+	}
+
+	.popup__price {
+		font-family: 'vwtextoffice-bold', sans-serif;
+		font-size: 14px;
+		font-weight: 700;
+	}
+
+	.popup__info {
+		padding-left: 60px;
+	}
+
+	.popup__actions {
+		display: block;
+		position: absolute;
+		top: -10px;
+		right: 60px;
+		// width: 260px;
+		background-color: transparent;
+
+		.wrapper {
+			width: 100%;
+		}
+
+	}
+
+	.popup__action_save {
+		margin-left: 0;
+	}
+
+	.popup__link {
+		color: $white;
+	}
+
 }

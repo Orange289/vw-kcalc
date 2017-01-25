@@ -39,7 +39,8 @@ var path = {
 		html: 'build/',
 		js: 'build/js/',
 		css: 'build/css/',
-		img: 'build/img/'
+		img: 'build/img/',
+		fonts: 'build/fonts/'
 	},
 	src: { //Пути откуда брать исходники
 		jade: 'src/jade/',
@@ -109,7 +110,7 @@ gulp.task('style:build', function () {
 gulp.task('svgsprite', function() {
 	return gulp.src(path.src.svg)
 		.pipe(svgstore({
-			inlineSvg: true
+
 		}))
 		.pipe(rename('sprite.svg'))
 		.pipe(gulp.dest(path.build.img));
@@ -134,8 +135,7 @@ gulp.task('image:build', function() {
 
 gulp.task('fonts:build', function() {
     gulp.src(path.src.fonts)
-		.pipe(cssfont64())
-		.pipe(gulp.dest(path.build.css))
+		.pipe(gulp.dest(path.build.fonts))
 		.pipe(browserSync.stream());
 });
 

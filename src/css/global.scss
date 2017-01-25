@@ -1,3 +1,22 @@
+//fonts
+
+@font-face {
+	@include font-setup($font-fam1, $font-1-local, $font-1-url1, $font-1-url2);
+  font-weight: 400;
+}
+@font-face {
+	@include font-setup($font-fam2, $font-2-local, $font-2-url1, $font-2-url2);
+  font-weight: 700;
+}
+@font-face {
+	@include font-setup($font-fam3, $font-3-local, $font-3-url1, $font-3-url2);
+  font-weight: 400;
+}
+@font-face {
+	@include font-setup($font-fam4, $font-4-local, $font-4-url1, $font-4-url2);
+  font-weight: 700;
+}
+
 //global styles
 
 body {
@@ -7,8 +26,6 @@ body {
 	background-color: $bg1;
 	padding: 0;
 	min-width: 320px;
-	// padding-left: 20px;
-	// padding-right: 20px;
 }
 
 a {
@@ -53,8 +70,8 @@ dd {
 	background: #ffffff;
 	color: #333;
 	box-shadow: none;
-	padding-top: 6px;
-	padding-bottom: 30px;
+	padding-top: 8px;
+	padding-bottom: 32px;
 	padding-left: 12px;
 }
 
@@ -82,11 +99,29 @@ dd {
 .chosen-container .chosen-results li.highlighted {
 	background-color: #f3f5f6 !important;
 	color: $graytext;
+	background-image: none;
 }
 
 .chosen-container .chosen-results {
 	margin: 0 !important;
 	padding: 0 !important;
+}
+
+.kdxvw-form__row {
+	padding: 0;
+}
+
+.chosen-container-active.chosen-with-drop .chosen-single {
+	background-color: $white;
+	background-image: none;
+}
+
+.chosen-container-single .chosen-single div {
+	right: 12px;
+}
+
+.request__form .chosen-container-single .chosen-single {
+	border-color: #cfd7d9;
 }
 
 

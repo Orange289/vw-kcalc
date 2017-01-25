@@ -12,15 +12,7 @@
 	padding-bottom: 36px;
 
 	&::after {
-		content: '1';
-		position: absolute;
-		top: -5px;
-		left: 140px;
-		@include font-param(8px, 13px, 700, $white);
-		@include size(13px);
-		text-align: center;
-		background-color: $blue;
-		border-radius: 50%;
+		@include circle('1', 140px, -5px);
 	}
 
 }
@@ -100,6 +92,37 @@
 
 	b {
 		@include font-param(40px, 40px, 700, $blue);
+	}
+
+}
+
+
+@media ($wide-widths) {
+
+	.payment {
+		float: left;
+		width: 394px;
+		margin-left: 105px;
+		margin-right: 30px;
+	}
+
+	.payment__title {
+		font-size: 28px;
+	}
+
+	.payment__subtitle {
+		padding-bottom: 41px;
+	}
+
+	.payment__label {
+		font-size: 13px;
+		line-height: 15px;
+		margin-top: 9px;
+	}
+
+	.payment__comparison {
+		padding-bottom: 43px;
+		margin-bottom: 25px;
 	}
 
 }

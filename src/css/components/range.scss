@@ -1,6 +1,8 @@
 .range {
 	width: 100%;
 	position: relative;
+	margin: auto;
+	margin-bottom: 25px;
 
 	&_rest {
 		margin-bottom: 36px;
@@ -11,6 +13,7 @@
 .range__input {
 	width: 264px;
 	margin-top: 8px;
+	border-color: #bdc3c6;
 }
 
 .range__slider {
@@ -19,4 +22,32 @@
 	left: 17px;
 	width: 246px !important;
 	margin: auto;
+}
+
+
+@media ($wide-widths) {
+
+	.range {
+		width: 254px;
+
+		&_deposit {
+			margin-bottom: 66px;
+		}
+
+		&_rest {
+			position: absolute;
+			top: 246px;
+			left: 90px;
+		}
+
+	}
+
+	.range__input {
+		width: 238px;
+	}
+
+	.range__slider {
+		width: 220px !important;
+	}
+
 }

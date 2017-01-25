@@ -18,7 +18,7 @@
 	&_map {
 		color: $blue;
 		display: block;
-		padding-top: 14px;
+		padding-top: 13px;
 		padding-bottom: 11px;
 		background-color: $white;
 		border: 1px solid #cfd7d9;
@@ -52,6 +52,29 @@
 			background: url('../img/icons/i-close.svg') no-repeat;
 			@include size(20px);
 			margin-left: 89px;
+		}
+
+	}
+
+}
+
+
+@media ($wide-widths) {
+
+
+	.btn {
+
+		&_send {
+			margin-left: 260px;
+			width: 198px;
+			margin-bottom: 95px;
+		}
+
+		&_map {
+			width: 114px;
+			position: absolute;
+			top: 202px;
+			left: 592px;
 		}
 
 	}

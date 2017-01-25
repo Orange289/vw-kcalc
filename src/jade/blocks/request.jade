@@ -2,27 +2,28 @@
 	.wrapper
 		h1.page_body__title.request__title Заявка на получение кредита
 		form.request__form(action='#' method='post')
-			+ form_element({
-				type:'text',
-				class_array: default_text_2,
-				id:'name',
-				title:'Имя',
-				placeholder:'Имя',
-				active:'1'
-			})
-			+ form_element({
-				type:'radio',
-				class_array: default_radio,
-				name: 'sex',
-				title:'Г-н',
-				checked:'checked'
-			})
-			+ form_element({
-				type:'radio',
-				class_array: default_radio,
-				name: 'sex',
-				title:'Г-жа'
-			})
+			.request__name
+				+ form_element({
+					type:'text',
+					class_array: default_text_2,
+					id:'name',
+					title:'Имя',
+					placeholder:'Имя',
+					active:'1'
+				})
+				+ form_element({
+					type:'radio',
+					class_array: default_radio,
+					name: 'sex',
+					title:'Г-н',
+					checked:'checked'
+				})
+				+ form_element({
+					type:'radio',
+					class_array: default_radio,
+					name: 'sex',
+					title:'Г-жа'
+				})
 			+ form_element({
 				type:'text',
 				class_array: default_text_3,
@@ -47,39 +48,33 @@
 				placeholder:'Телефон',
 				active:'1'
 			})
-			.form__element
-				+ form_element({
-					type:'select',
-					class_array: default_select_3,
-					id:'city',
-					title:'Город',
-					options:['Набережные Челны','Москва','Санкт-Петербург']
-				})
-				svg(class='icon icon_select icon_blue')
-					use(xlink:href='img/sprite.svg#i-up_down')
-			.form__element
-				+ form_element({
-					type:'select',
-					class_array: default_select_4,
-					id:'dealer',
-					title:'Дилер',
-					options:['Genser','Genser','Genser']
-				})
-				svg(class='icon icon_select icon_blue')
-					use(xlink:href='img/sprite.svg#i-up_down')
+			+ form_element({
+				type:'select',
+				class_array: default_select_3,
+				id:'city',
+				title:'Город',
+				options:['Набережные Челны','Москва','Санкт-Петербург']
+			})
+			+ form_element({
+				type:'select',
+				class_array: default_select_4,
+				id:'dealer',
+				title:'Дилер',
+				options:['Genser','Genser','Genser']
+			})
 			a.btn.btn_map.js_fancybox_noclose(href='#') На карте
 				svg(class='icon icon_loc icon_blue')
 					use(xlink:href='img/sprite.svg#i-location')
 			.request__agree
 				+ form_element({
 					type:'checkbox',
-					class_array: default_checkbox,
+					class_array: default_checkbox_1,
 					title: 'Согласие на обработку персональных данных с целью обработки запроса',
 					checked: 'checked'
 				})
 				+ form_element({
 					type:'checkbox',
-					class_array: default_checkbox,
+					class_array: default_checkbox_2,
 					title: 'Согласие на обработку персональных данных с целью дальнейшей коммуникации',
 					checked: 'checked'
 				})

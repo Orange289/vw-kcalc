@@ -42,7 +42,7 @@ $(document).ready(function(){
 
 	$('.btn_popup').on('click', function(){
 		$(this).toggleClass("btn_popup_close");
-		$(this).parents(".popup__request").find(".popup__actions").slideToggle("fast");
+		$(this).parents(".popup").find(".popup__actions").slideToggle("fast");
 	})
 
 //tabs
@@ -53,6 +53,12 @@ $(document).ready(function(){
 	  $('div.t1').hide();
 	  $('div.t2').hide();
 	  $('div.' + thisId).show();
+	  if($('.t1').is(':hidden')) {
+		  $('.programs__left').addClass('programs__left_standard');
+	  }
+	  else {
+		  $('.programs__left').removeClass('programs__left_standard');
+	  }
 	  });
 
 	  $('.tabs__radio_int').click(function(){

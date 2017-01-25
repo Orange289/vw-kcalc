@@ -1,9 +1,14 @@
-.page-header {
-	padding-top: 30px;
+.page_header {
+	padding-top: 8px;
 }
 
 
 
 @media ($wide-widths) {
+
+
+	.page_header {
+		padding-top: 97px;
+	}
 
 }

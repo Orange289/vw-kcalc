@@ -5,3 +5,15 @@
 	margin-bottom: 17px;
 	position: relative;
 }
+
+
+@media ($wide-widths) {
+
+	.page_body__title {
+		font-size: 40px;
+		margin-top: 0;
+		margin-bottom: 32px;
+
+	}
+
+}

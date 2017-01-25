@@ -1,54 +1,47 @@
 .programs__content
 	.programs__selects.car_filters
-		.form__element
-			+ form_element({
-				type:'select',
-				class_array: default_select_1,
-				id:'model',
-				title:'Модель',
-				options:['Tiguan','Tiguan','Tiguan']
-			})
-			svg(class='icon icon_select icon_blue')
-				use(xlink:href='img/sprite.svg#i-up_down')
-		.form__element
-			+ form_element({
-				type:'select',
-				class_array: default_select_1,
-				id:'config',
-				title:'Комплектация',
-				options:['Allstar','Allstar','Allstar']
-			})
-			svg(class='icon icon_select icon_blue')
-				use(xlink:href='img/sprite.svg#i-up_down')
-		.programs__img
-			b Tiguan
-			img(src='img/img-tiguan.png')
-		.programs__prices.prices
-			.prices__item.prices__item_cost
-				dl(class='form__cell programs__input programs__input_cost')
-					dd(class='form__field-wrap')
-						input(value='10 319 000' type='text' id='cost' placeholder='' disabled='disabled' class='form__text prices__value prices__value_cost form__text_disabled ')
-						svg(class='icon icon_ruble')
+		+ form_element({
+			type:'select',
+			class_array: default_select_1,
+			id:'model',
+			title:'Модель',
+			options:['Tiguan','Tiguan','Tiguan']
+		})
+		+ form_element({
+			type:'select',
+			class_array: default_select_1,
+			id:'config',
+			title:'Комплектация',
+			options:['Allstar','Allstar','Allstar']
+		})
+		.programs__info
+			.programs__img
+				b Tiguan
+				img(src='img/img-tiguan.png' srcset='img/img-tiguan@2x.png 2x, img/tiguan@3x.png 3x')
+			.programs__prices.prices
+				.prices__item.prices__item_cost
+					dl(class='form__cell programs__input programs__input_cost')
+						dd(class='form__field-wrap')
+							input(value='10 319 000' type='text' id='cost' placeholder='' disabled='disabled' class='form__text prices__value prices__value_cost form__text_disabled ')
+							svg(class='icon icon_ruble icon_gray')
+								use(xlink:href='img/sprite.svg#i-ruble')
+						dt(class='form__label form__label_price')
+							label(for='cost') Стоимость автомобиля
+							svg(class='icon icon_edit icon_blue btn_edit')
+								use(xlink:href='img/sprite.svg#i-pencil')
+				.prices__item.prices__item_payment
+					b.prices__value.prices__value_pay 170 800
+						svg(class='icon icon_ruble icon_blue')
 							use(xlink:href='img/sprite.svg#i-ruble')
-					dt(class='form__label form__label_price')
-						label(for='cost') Стоимость автомобиля
-						svg(class='icon icon_edit icon_blue btn_edit')
-							use(xlink:href='img/sprite.svg#i-pencil')
-			.prices__item.prices__item_payment
-				b.prices__value.prices__value_pay 170 800
-					svg(class='icon icon_ruble icon_blue')
-						use(xlink:href='img/sprite.svg#i-ruble')
-				span.form__label.form__label_price Ежемесячный платеж
-		.programs__slider.range.range_deposit
-			+ slider(arraySlider_1)
-		.programs__credit_term
-			.form__element
+					span.form__label.form__label_price Ежемесячный платеж
+		.programs__left
+			.programs__slider.range.range_deposit
+				+ slider(arraySlider_1)
+			.programs__credit_term
 				+ form_element({
 					type:'select',
-					class_array: default_select_1,
+					class_array: default_select_5,
 					id:'credit',
 					title:'Срок кредитования',
 					options:['12 месяцев','12 месяцев','12 месяцев']
 				})
-				svg(class='icon icon_select icon_blue')
-					use(xlink:href='img/sprite.svg#i-up_down')
