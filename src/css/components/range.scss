@@ -2,10 +2,10 @@
 	width: 100%;
 	position: relative;
 	margin: auto;
-	margin-bottom: 25px;
+	margin-bottom: 49px;
 
 	&_rest {
-		margin-bottom: 36px;
+		margin-bottom: 65px;
 	}
 
 }
@@ -29,15 +29,16 @@
 
 	.range {
 		width: 254px;
-
-		&_deposit {
-			margin-bottom: 66px;
-		}
+		margin-bottom: 66px;
 
 		&_rest {
 			position: absolute;
 			top: 246px;
 			left: 90px;
+		}
+
+		&_standard {
+			margin-bottom: 59px;
 		}
 
 	}

@@ -2043,9 +2043,9 @@ dd {
   width: 100%;
   position: relative;
   margin: auto;
-  margin-bottom: 25px; }
+  margin-bottom: 49px; }
   .range_rest {
-    margin-bottom: 36px; }
+    margin-bottom: 65px; }
 
 .range__input {
   width: 264px;
@@ -2061,13 +2061,14 @@ dd {
 
 @media (min-width: 768px) {
   .range {
-    width: 254px; }
-    .range_deposit {
-      margin-bottom: 66px; }
+    width: 254px;
+    margin-bottom: 66px; }
     .range_rest {
       position: absolute;
       top: 246px;
       left: 90px; }
+    .range_standard {
+      margin-bottom: 59px; }
   .range__input {
     width: 238px; }
   .range__slider {
