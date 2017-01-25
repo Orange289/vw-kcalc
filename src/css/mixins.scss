@@ -56,3 +56,14 @@
 	background-color: $blue;
 	border-radius: 50%;
 }
+
+// отметка шкалы
+
+@mixin dash($l:2px) {
+	content: '';
+	position: absolute;
+	top: -2px;
+	left: $l;
+	@include size(1px, 8px);
+	background-color: #bdc3c6;
+}

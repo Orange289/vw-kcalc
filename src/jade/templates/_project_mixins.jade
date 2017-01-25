@@ -8,6 +8,8 @@ mixin slider(array)
 	svg(class='icon icon_ruble icon_gray icon_ruble_slider')
 		use(xlink:href='img/sprite.svg#i-ruble')
 	.scale
-		- var item = 1
+		- var item = 0
 		while item < 101
-			span= item++
+			span(class='i_' + item)= item++
+			if item == 100
+				span(class=item)= '100%'

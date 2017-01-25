@@ -100,7 +100,7 @@ $('#range-deposit').slider({
 	range: "min",
 	value: 0,
 	min: 0,
-	max: 1076734,
+	max: 1076700,
 	step: 1,
 
 
@@ -112,6 +112,20 @@ $('#range-deposit').slider({
   slide: function(event, ui) {
 		$('#deposit').val($('#range-deposit').slider('value'));
 		$('#deposit').attr('value', ui.value);
+  },
+
+  change: function( event, ui ) {
+	var i = 0;
+	while (i < 101) {
+		if (ui.value == i * 10767) {
+		   $('.range_deposit span.i_' + i).css('color','#00b1eb');
+		   }
+	   else {
+		   $('.range_deposit span.i_' + i).css('color','#bdc3c6');
+	   };
+	   i++;
+	}
+
   }
 
 });
@@ -138,7 +152,7 @@ $('#range-rest').slider({
 	range: "min",
 	value: 0,
 	min: 0,
-	max: 1076734,
+	max: 1076700,
 	step: 1,
 
 
@@ -150,6 +164,29 @@ $('#range-rest').slider({
   slide: function(event, ui) {
 		$('#rest').val($('#range-rest').slider('value'));
 		$('#rest').attr('value', ui.value);
+  },
+
+
+
+
+  change: function( event, ui ) {
+	  var i = 0;
+	  while (i < 101) {
+		  if (ui.value == Math.floor(i * 10767)) {
+			 $('.range_rest span.i_' + i).css('color','#00b1eb');
+			 	if((i != 0) && (i != 25) && (i != 50) && (i != 75) && (i != 100)) {
+					$('.range_rest span.i_' + i).css('display','block');
+				}
+			 }
+		 else {
+			 $('.range_rest span.i_' + i).css('color','#bdc3c6');
+			 if((i != 0) && (i != 25) && (i != 50) && (i != 75) && (i != 100)) {
+				 $('.range_rest span.i_' + i).css('display','none');
+			 }
+		 };
+		 i++;
+	  }
+
   }
 
 });
@@ -186,5 +223,12 @@ $('.range__input').keypress(function(event){
 	$('.ui-widget.ui-widget-content').css('border','none');
 	$('.ui-widget-header').css('background','transparent');
 
+// scale and handler
+// alert(Math.floor($('.ui-slider-handle').offset().left) + 10);
+// alert(Math.floor($('.scale span').offset().left));
+// if ($('.ui-slider-handle').offset().left == $('.scale span').offset().left) {
+// 	$('.scale span').css('color','#00b1eb');
+// 	alert($('.ui-slider-handle').offset().left);
+// }
 
 })
