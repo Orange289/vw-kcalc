@@ -128,9 +128,9 @@ dd {
 
 }
 
-.ui-slider-handle {
+.ui-slider .ui-slider-handle {
 	outline: none !important;
-	@include size(13px, 19px);
+	@include size(13px, 13px);
 	background-color: #ffffff !important;
 	border-bottom: 1px solid #cfd7d9 !important;
 	border-left: 1px solid #cfd7d9 !important;
@@ -142,11 +142,11 @@ dd {
 .ui-slider-handle::before {
 	content: '';
 	position: absolute;
-	top: -7px;
+	top: -6px;
 	width: 0;
 	height: 0;
 	border-style: solid;
-	border-width: 0 11px 9px 10px;
+	border-width: 0 7px 7px 6px;
 	border-color: transparent transparent #ffffff transparent;
 	z-index: 6;
 }
@@ -154,15 +154,71 @@ dd {
 .ui-slider-handle::after {
 	content: '';
 	position: absolute;
-	top: -8px;
+	top: -7px;
 	width: 0;
 	height: 0;
 	border-style: solid;
-	border-width: 0 11px 9px 10px;
+	border-width: 0 7px 7px 6px;
 	border-color: transparent transparent #cfd7d9 transparent;
 	z-index: 5;
 }
 
 .ui-widget {
 	background-color: transparent !important;
+}
+
+.ui-widget.ui-widget-content {
+	border: none;
+}
+
+.ui-slider-label,
+.ui-slider-tip {
+	cursor: default !important;
+	font-family: 'vwheadoffice-regular', sans-serif;
+	@include font-param(11px, 11px, 400, #cccccc);
+	top: 0 !important;
+}
+
+.ui-slider-pips .ui-slider-label {
+	width: 1.5em !important;
+}
+
+.ui-slider-pips:not(.ui-slider-disabled) .ui-slider-pip:hover .ui-slider-label {
+	color: #cccccc;
+}
+
+.ui-slider-pips [class*=ui-slider-pip-selected]  {
+	color: $blue !important;
+
+}
+
+.ui-slider-float .ui-slider-tip,
+.ui-slider-float .ui-slider-tip-label {
+	top: 19px !important;
+	background: transparent !important;
+	border: none !important;
+	left: -7px !important;
+	margin-left: -4px !important;
+	color: $blue;
+}
+
+.ui-slider-tip:last-child {
+	margin-left: -3px !important;
+}
+
+.ui-slider-float .ui-slider-tip:after,
+.ui-slider-float .ui-slider-pip .ui-slider-tip-label:after {
+	display: none;
+}
+
+.ui-slider-float .ui-slider-tip:before,
+.ui-slider-float .ui-slider-pip .ui-slider-tip-label:before {
+	display: none;
+}
+
+.ui-slider-line {
+	background: #cfd7d9 !important;
+	height: 8px !important;
+	top: -12px !important;
+	left: 43% !important;
 }

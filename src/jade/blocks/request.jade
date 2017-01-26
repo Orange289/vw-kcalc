@@ -1,4 +1,4 @@
-.request
+.request#request
 	.wrapper
 		h1.page_body__title.request__title Заявка на получение кредита
 		form.request__form(action='#' method='post')
@@ -53,7 +53,7 @@
 				class_array: default_select_3,
 				id:'city',
 				title:'Город',
-				options:['Набережные Челны','Москва','Санкт-Петербург']
+				options:['Набережные Челны','Москва','Санкт-Петербург','Набережные Челны','Москва','Санкт-Петербург','Набережные Челны','Москва','Санкт-Петербург','Набережные Челны','Москва','Санкт-Петербург','Набережные Челны','Москва','Санкт-Петербург','Набережные Челны','Москва','Санкт-Петербург','Набережные Челны','Москва','Санкт-Петербург','Набережные Челны','Москва','Санкт-Петербург','Набережные Челны','Москва','Санкт-Петербург','Набережные Челны','Москва','Санкт-Петербург','Набережные Челны','Москва','Санкт-Петербург','Набережные Челны','Москва','Санкт-Петербург']
 			})
 			+ form_element({
 				type:'select',
@@ -62,9 +62,9 @@
 				title:'Дилер',
 				options:['Genser','Genser','Genser']
 			})
-			a.btn.btn_map.js_fancybox_noclose(href='#') На карте
-				svg(class='icon icon_loc icon_blue')
-					use(xlink:href='img/sprite.svg#i-location')
+				a.btn.btn_map.js_fancybox_noclose(href='#') На карте
+					svg(class='icon icon_loc icon_blue')
+						use(xlink:href='img/sprite.svg#i-location')
 			.request__agree
 				+ form_element({
 					type:'checkbox',

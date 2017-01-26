@@ -1,1 +1,108 @@
-$(document).ready(function(){$(".btn_popup").on("click",function(){$(this).toggleClass("btn_popup_close"),$(this).parents(".popup").find(".popup__actions").slideToggle("fast")}),$(".tabs__radio_main").click(function(){var e=this.id.slice(0,2);$("div.t1").hide(),$("div.t2").hide(),$("div."+e).show(),$(".t1").is(":hidden")?($(".programs__left").addClass("programs__left_standard"),$(".range").addClass("range_standard")):($(".programs__left").removeClass("programs__left_standard"),$(".range").removeClass("range_standard"))}),$(".tabs__radio_int").click(function(){var e=this.id.slice(0,2);$("div.t3").hide(),$("div.t4").hide(),$("div."+e).show()});var e=$(window),a=$(".popup"),s=a.offset().top,t=function(){e.scrollTop()>s?a.addClass("sticky"):a.removeClass("sticky")};e.scroll(t),$("#range-deposit").slider({animate:!0,range:"min",value:0,min:0,max:1076700,step:1,stop:function(e,a){$("#deposit").val($("#range-deposit").slider("value")),$("#deposit").attr("value",a.value)},slide:function(e,a){$("#deposit").val($("#range-deposit").slider("value")),$("#deposit").attr("value",a.value)},change:function(e,a){for(var s=0;s<101;)a.value==10767*s?$(".range_deposit span.i_"+s).css("color","#00b1eb"):$(".range_deposit span.i_"+s).css("color","#bdc3c6"),s++}}),$("#deposit").change(function(){$("#deposit").val()||$("#deposit").val(0),$("#deposit").val()>=1076734&&$("#deposit").val(1076734),$("#range-deposit").slider("value",$("#deposit").val())}),$("#range-rest").slider({animate:!0,range:"min",value:0,min:0,max:1076700,step:1,stop:function(e,a){$("#rest").val($("#range-rest").slider("value")),$("#rest").attr("value",a.value)},slide:function(e,a){$("#rest").val($("#range-rest").slider("value")),$("#rest").attr("value",a.value)},change:function(e,a){for(var s=0;s<101;)a.value==Math.floor(10767*s)?($(".range_rest span.i_"+s).css("color","#00b1eb"),0!=s&&25!=s&&50!=s&&75!=s&&100!=s&&$(".range_rest span.i_"+s).css("display","block")):($(".range_rest span.i_"+s).css("color","#bdc3c6"),0!=s&&25!=s&&50!=s&&75!=s&&100!=s&&$(".range_rest span.i_"+s).css("display","none")),s++}}),$("#rest").change(function(){$("#rest").val()||$("#rest").val(0),$("#rest").val()>=1076734&&$("#rest").val(1076734),$("#range-rest").slider("value",$("#rest").val())}),$(".range__input").keypress(function(e){var a,s;if(!e)var e=window.event;return e.keyCode?a=e.keyCode:e.which&&(a=e.which),null==a||0==a||8==a||13==a||9==a||46==a||37==a||39==a||(s=String.fromCharCode(a),!!/\d/.test(s)&&void 0)}),$(".ui-widget.ui-widget-content").css("border","none"),$(".ui-widget-header").css("background","transparent")});
+$(document).ready(function(){
+
+	svg4everybody({});
+
+// open menu
+
+	$('.btn_popup').on('click', function(){
+		$(this).toggleClass("btn_popup_close");
+		$(this).parents(".popup").find(".popup__actions").slideToggle("fast");
+	})
+
+//tabs
+
+
+	$('.tabs__radio_prog').click(function(){
+	  var thisId = this.id.slice(0,2);
+	  $('div.t1').hide();
+	  $('div.t2').hide();
+	  $('div.' + thisId).show();
+	  if($('.t1').is(':hidden')) {
+		  $('.programs__left').addClass('programs__left_standard');
+		  $('.range').addClass('range_standard');
+	  }
+	  else {
+		  $('.programs__left').removeClass('programs__left_standard');
+		  $('.range').removeClass('range_standard');
+	  }
+	  });
+
+	  $('.tabs__radio_docs').click(function(){
+  	  var thisId = this.id.slice(0,2);
+  	  $('div.t3').hide();
+  	  $('div.t4').hide();
+  	  $('div.' + thisId).show();
+  	  });
+
+
+// scroll-menu
+
+	var win = $(window),
+	    nav = $('.popup'),
+
+	    pos = nav.offset().top,
+	    sticky = function(){
+	      win.scrollTop() > pos ?
+	        nav.addClass('sticky')
+	      : nav.removeClass('sticky')
+	    }
+
+	win.scroll(sticky);
+
+// range-slider
+
+$('.ui-widget.ui-widget-content').css('border','none');
+$('.ui-widget-header').css('background','transparent');
+
+//deposit
+
+$("#range-deposit")
+    .slider({
+		min: 0,
+        max: 100,
+		step: 1
+    })
+    .slider("pips", {
+        rest: "label",
+		step: 25
+
+    })
+	.slider("float")
+	.slider({
+		slide: function(event, ui) {
+	  		$('#deposit').val($('#range-deposit').slider('value')*10767);
+	  		$('#deposit').attr('value', ui.value);
+	    },
+		stop: function(event, ui) {
+			$('#deposit').val($('#range-deposit').slider('value')*10767);
+			$('#deposit').attr('value', ui.value);
+		}
+	})
+
+//rest
+
+$("#range-rest")
+    .slider({
+		min: 0,
+        max: 100,
+		step: 1
+    })
+    .slider("pips", {
+        rest: "label",
+		step: 25
+
+    })
+	.slider("float")
+	.slider({
+		slide: function(event, ui) {
+	  		$('#rest').val($('#range-rest').slider('value')*10767);
+	  		$('#rest').attr('value', ui.value);
+	    },
+		stop: function(event, ui) {
+			$('#rest').val($('#range-rest').slider('value')*10767);
+			$('#rest').attr('value', ui.value);
+		}
+	})
+
+
+})

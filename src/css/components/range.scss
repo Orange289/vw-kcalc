@@ -11,14 +11,16 @@
 }
 
 .range__input {
+	font-family: 'vwtextoffice-regular', sans-serif;
 	width: 264px;
 	margin-top: 8px;
 	border-color: #bdc3c6;
+	background-color: $white !important;
 }
 
 .range__slider {
 	position: absolute !important;
-	top: 62px;
+	top: 65px;
 	left: 17px;
 	width: 246px !important;
 	margin: auto;

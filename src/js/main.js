@@ -1,5 +1,7 @@
 $(document).ready(function(){
 
+	svg4everybody({});
+
 // open menu
 
 	$('.btn_popup').on('click', function(){
@@ -10,7 +12,7 @@ $(document).ready(function(){
 //tabs
 
 
-	$('.tabs__radio_main').click(function(){
+	$('.tabs__radio_prog').click(function(){
 	  var thisId = this.id.slice(0,2);
 	  $('div.t1').hide();
 	  $('div.t2').hide();
@@ -25,7 +27,7 @@ $(document).ready(function(){
 	  }
 	  });
 
-	  $('.tabs__radio_int').click(function(){
+	  $('.tabs__radio_docs').click(function(){
   	  var thisId = this.id.slice(0,2);
   	  $('div.t3').hide();
   	  $('div.t4').hide();
@@ -35,164 +37,72 @@ $(document).ready(function(){
 
 // scroll-menu
 
-// jQuery(function(f){
-//     var element = f('.popup');
-//     f(window).scroll(function(){
-//         element['fade'+ (f(this).scrollTop() > 607 ? 'In': 'Out')](500);
-//     });
-// });
+	var win = $(window),
+	    nav = $('.popup'),
 
+	    pos = nav.offset().top,
+	    sticky = function(){
+	      win.scrollTop() > pos ?
+	        nav.addClass('sticky')
+	      : nav.removeClass('sticky')
+	    }
 
-var win = $(window),
-    nav = $('.popup'),
+	win.scroll(sticky);
 
-    pos = nav.offset().top,
-    sticky = function(){
-      win.scrollTop() > pos ?
-        nav.addClass('sticky')
-      : nav.removeClass('sticky')
-    }
+// range-slider
 
-win.scroll(sticky)
+$('.ui-widget.ui-widget-content').css('border','none');
+$('.ui-widget-header').css('background','transparent');
 
+//deposit
 
+$("#range-deposit")
+    .slider({
+		min: 0,
+        max: 100,
+		step: 1
+    })
+    .slider("pips", {
+        rest: "label",
+		step: 25
 
-// range-deposit
+    })
+	.slider("float")
+	.slider({
+		slide: function(event, ui) {
+	  		$('#deposit').val($('#range-deposit').slider('value')*10767);
+	  		$('#deposit').attr('value', ui.value);
+	    },
+		stop: function(event, ui) {
+			$('#deposit').val($('#range-deposit').slider('value')*10767);
+			$('#deposit').attr('value', ui.value);
+		}
+	})
 
-$('#range-deposit').slider({
-	animate: true,
-	range: "min",
-	value: 0,
-	min: 0,
-	max: 1076700,
-	step: 1,
+//rest
 
+$("#range-rest")
+    .slider({
+		min: 0,
+        max: 100,
+		step: 1
+    })
+    .slider("pips", {
+        rest: "label",
+		step: 25
 
-	stop: function(event,ui) {
-		$('#deposit').val($('#range-deposit').slider('value'));
-		$('#deposit').attr('value', ui.value);
-	},
+    })
+	.slider("float")
+	.slider({
+		slide: function(event, ui) {
+	  		$('#rest').val($('#range-rest').slider('value')*10767);
+	  		$('#rest').attr('value', ui.value);
+	    },
+		stop: function(event, ui) {
+			$('#rest').val($('#range-rest').slider('value')*10767);
+			$('#rest').attr('value', ui.value);
+		}
+	})
 
-  slide: function(event, ui) {
-		$('#deposit').val($('#range-deposit').slider('value'));
-		$('#deposit').attr('value', ui.value);
-  },
-
-  change: function( event, ui ) {
-	var i = 0;
-	while (i < 101) {
-		if (ui.value == i * 10767) {
-		   $('.range_deposit span.i_' + i).css('color','#00b1eb');
-		   }
-	   else {
-		   $('.range_deposit span.i_' + i).css('color','#bdc3c6');
-	   };
-	   i++;
-	}
-
-  }
-
-});
-
-$('#deposit').change(function(){
-	if (!$('#deposit').val()) {
-		$('#deposit').val(0);
-	}
-
-	if ($('#deposit').val() >= 1076734) {
-		$('#deposit').val(1076734);
-	}
-
-
-	$('#range-deposit').slider('value',$('#deposit').val());
-
-})
-
-
-//range-rest
-
-$('#range-rest').slider({
-	animate: true,
-	range: "min",
-	value: 0,
-	min: 0,
-	max: 1076700,
-	step: 1,
-
-
-	stop: function(event,ui) {
-		$('#rest').val($('#range-rest').slider('value'));
-		$('#rest').attr('value', ui.value);
-	},
-
-  slide: function(event, ui) {
-		$('#rest').val($('#range-rest').slider('value'));
-		$('#rest').attr('value', ui.value);
-  },
-
-
-
-
-  change: function( event, ui ) {
-	  var i = 0;
-	  while (i < 101) {
-		  if (ui.value == Math.floor(i * 10767)) {
-			 $('.range_rest span.i_' + i).css('color','#00b1eb');
-			 	if((i != 0) && (i != 25) && (i != 50) && (i != 75) && (i != 100)) {
-					$('.range_rest span.i_' + i).css('display','block');
-				}
-			 }
-		 else {
-			 $('.range_rest span.i_' + i).css('color','#bdc3c6');
-			 if((i != 0) && (i != 25) && (i != 50) && (i != 75) && (i != 100)) {
-				 $('.range_rest span.i_' + i).css('display','none');
-			 }
-		 };
-		 i++;
-	  }
-
-  }
-
-});
-
-$('#rest').change(function(){
-	if (!$('#rest').val()) {
-		$('#rest').val(0);
-	}
-
-	if ($('#rest').val() >= 1076734) {
-		$('#rest').val(1076734);
-	}
-
-
-	$('#range-rest').slider('value',$('#rest').val());
-
-})
-
-
-$('.range__input').keypress(function(event){
-		var key, keyChar;
-		if(!event) var event = window.event;
-
-		if (event.keyCode) key = event.keyCode;
-		else if(event.which) key = event.which;
-
-		if(key==null || key==0 || key==8 || key==13 || key==9 || key==46 || key==37 || key==39 ) return true;
-		keyChar=String.fromCharCode(key);
-
-		if(!/\d/.test(keyChar))	return false;
-
-	});
-
-	$('.ui-widget.ui-widget-content').css('border','none');
-	$('.ui-widget-header').css('background','transparent');
-
-// scale and handler
-// alert(Math.floor($('.ui-slider-handle').offset().left) + 10);
-// alert(Math.floor($('.scale span').offset().left));
-// if ($('.ui-slider-handle').offset().left == $('.scale span').offset().left) {
-// 	$('.scale span').css('color','#00b1eb');
-// 	alert($('.ui-slider-handle').offset().left);
-// }
 
 })

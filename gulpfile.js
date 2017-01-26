@@ -86,9 +86,7 @@ gulp.task('jade:build', function () {
 
 gulp.task('js:build', function () {
     gulp.src(path.src.js) //Найдем main файл
-				.pipe(plumber())
-        .pipe(rigger()) //Прогоним через rigger
-        .pipe(uglify()) //Сожмем наш js
+		.pipe(plumber())
         .pipe(gulp.dest(path.build.js)) //Выплюнем готовый файл в build
 				.pipe(browserSync.stream());
 });

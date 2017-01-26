@@ -5,7 +5,7 @@
 
 		&_slider {
 			position: absolute;
-			top: 38px;
+			top: 42px;
 			left: 83px;
 		}
 
@@ -34,8 +34,8 @@
 	&_loc {
 		@include size(9px, 13px);
 		position: absolute;
-		top: 15px;
-		left: 95px;
+		top: 13px;
+		left: 92px;
 	}
 
 	&_select {
@@ -85,6 +85,10 @@
 
 		&_ruble_doc {
 			margin-top: 10px;
+		}
+
+		&_loc {
+			left: 16px;
 		}
 
 	}

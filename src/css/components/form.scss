@@ -106,7 +106,7 @@
 
 .form__text {
 	@include font-param(16px, 12px, 400);
-	padding-top: 8px;
+	padding-top: 11px;
 	padding-bottom: 11px;
 	padding-left: 14px;
 	border: solid 1px #cfd7d9;
@@ -187,6 +187,7 @@
 
 			&_dealer {
 				width: 233px;
+				position: relative;
 			}
 
 			&_city {
@@ -211,6 +212,11 @@
 				width: 706px !important;
 			}
 
+		}
+
+		&_dealer {
+			border-top-right-radius: 0 !important;
+			border-bottom-right-radius: 0 !important;
 		}
 
 	}

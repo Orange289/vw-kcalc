@@ -25,6 +25,7 @@
 		border-radius: 3px;
 		position: relative;
 		margin-bottom: 23px;
+		margin-top: 3px;
 		width: 278px;
 	}
 
@@ -45,13 +46,13 @@
 		&_open {
 			background: url('../img/icons/i-more.svg') no-repeat;
 			@include size(34px, 9px);
-			margin-left: 75px;
+			margin-left: 72px;
 		}
 
 		&_close {
 			background: url('../img/icons/i-close.svg') no-repeat;
 			@include size(20px);
-			margin-left: 89px;
+			margin-left: 86px;
 		}
 
 	}
@@ -71,10 +72,15 @@
 		}
 
 		&_map {
-			width: 114px;
+			width: 97px;
 			position: absolute;
 			top: 202px;
 			left: 592px;
+			top: -3px;
+			left: 231px;
+			border-top-left-radius: 0;
+			border-bottom-left-radius: 0;
+			padding-left: 17px;
 		}
 
 	}
