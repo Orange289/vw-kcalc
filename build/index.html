@@ -11,21 +11,12 @@
     <link rel="icon" href="img/favicon.png" type="image/png"/>
     <link rel="apple-touch-icon" href="img/apple-touch-icon.png"/>
     <link rel="stylesheet" media="all" href="css/style.css"/>
-    <script src="js/jquery-1.11.1.min.js"></script>
-    <script src="js/jquery-ui.min.js"></script>
-    <script src="js/jquery-ui-slider-pips.js"></script>
-    <script src="js/kdxvw-customscroll.js"></script>
-    <script src="js/kdxvw-chosen.js"></script>
-    <script src="js/kdxvw-maskedinput.min.js"></script>
-    <script src="js/kdxvw-form.js"></script>
-    <script src="js/all/svg4everybody.js"></script>
-    <script>svg4everybody();</script>
   </head>
   <body class="page_body">
     <header class="page_header">
       <h1 class="page_body__title">Кредитный калькулятор</h1>
     </header>
-    <main class="page_main">
+    <main class="page_main kdxvw-form">
       <div class="wrapper">
         <div class="tabs tabs_programs page_main__programs programs">
           <div class="tabs__wrapper">
@@ -80,7 +71,7 @@
                     </dl>
                   </div>
                   <div class="prices__item prices__item_payment"><b class="prices__value prices__value_pay">170 800
-                      <svg class="icon icon_ruble icon_blue">
+                      <svg class="icon icon_ruble icon_blue icon_blue_prices">
                         <use xlink:href="img/sprite.svg#i-ruble"></use>
                       </svg></b><span class="form__label form__label_price">Ежемесячный платеж</span></div>
                 </div>
@@ -125,7 +116,7 @@
               <div class="payment__comparison">
                 <div class="payment__program payment__program_guarantee">
                   <div class="payment__price payment__price_guarantee"><span>17 800</span>
-                    <svg class="icon_ruble icon_white">
+                    <svg class="icon icon_ruble icon_white">
                       <use xlink:href="img/sprite.svg#i-ruble"></use>
                     </svg>
                   </div>
@@ -133,7 +124,7 @@
                 </div>
                 <div class="payment__program payment__program_standard">
                   <div class="payment__price payment__price_standard"><span>1 319 000</span>
-                    <svg class="icon_ruble icon_white">
+                    <svg class="icon icon_ruble icon_white">
                       <use xlink:href="img/sprite.svg#i-ruble"></use>
                     </svg>
                   </div>
@@ -141,7 +132,7 @@
                 </div>
               </div>
               <div class="payment__total"><b>3 885 889</b>
-                <svg class="icon_ruble icon_blue">
+                <svg class="icon icon_ruble icon_blue icon_blue_payment">
                   <use xlink:href="img/sprite.svg#i-ruble"></use>
                 </svg><span class="payment__label payment__label_total">Выкупная стоимость автомобиля</span>
               </div>
@@ -193,7 +184,7 @@
                 <dt class="form__label form__label_request">
                   <label for="name">Имя</label>
                 </dt>
-                <dd class="form__field-wrap">
+                <dd class="form__field-wrap form__field-wrap_request">
                   <input type="text" id="name" placeholder="Имя" class="form__text request__input request__input_name "/>
                 </dd>
               </dl>
@@ -208,7 +199,7 @@
               <dt class="form__label form__label_request">
                 <label for="surname">Фамилия</label>
               </dt>
-              <dd class="form__field-wrap">
+              <dd class="form__field-wrap form__field-wrap_request">
                 <input type="text" id="surname" placeholder="Фамилия" class="form__text request__input request__input_surname "/>
               </dd>
             </dl>
@@ -216,7 +207,7 @@
               <dt class="form__label form__label_request">
                 <label for="email">E-mail</label>
               </dt>
-              <dd class="form__field-wrap">
+              <dd class="form__field-wrap form__field-wrap_request">
                 <input type="email" id="email" placeholder="E-mail" class="form__text request__input request__input_email "/>
               </dd>
             </dl>
@@ -224,7 +215,7 @@
               <dt class="form__label form__label_request">
                 <label for="tel">Телефон</label>
               </dt>
-              <dd class="form__field-wrap">
+              <dd class="form__field-wrap form__field-wrap_request">
                 <input type="tel" id="tel" placeholder="Телефон" class="form__text request__input request__input_tel "/>
               </dd>
             </dl>
@@ -301,6 +292,16 @@
         </div>
       </div>
     </main>
+    <script src="js/jquery-1.11.1.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="js/all/modernizr.js"></script>
+    <script src="js/jquery-ui-slider-pips.js"></script>
+    <script src="js/kdxvw-customscroll.js"></script>
+    <script src="js/kdxvw-chosen.js"></script>
+    <script src="js/kdxvw-maskedinput.min.js"></script>
+    <script src="js/kdxvw-form.js"></script>
+    <script src="js/all/svg4everybody.js"></script>
+    <script>svg4everybody();</script>
     <script src="js/main.js"></script>
     <div class="popup">
       <div class="popup__head">

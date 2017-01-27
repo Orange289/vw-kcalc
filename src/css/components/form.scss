@@ -80,6 +80,19 @@
 		width: 280px !important;
 
 		.chosen-container-single .chosen-single {
+			font-size: 20px;
+		}
+
+		.chosen-drop {
+			font-size: 20px;
+		}
+
+	}
+
+	&_filters {
+		width: 280px !important;
+
+		.chosen-container-single .chosen-single {
 			font-size: 18px;
 		}
 
@@ -104,6 +117,10 @@
 
 }
 
+.form__field-wrap_request {
+	position: relative;
+}
+
 .form__text {
 	@include font-param(16px, 12px, 400);
 	padding-top: 11px;
@@ -111,6 +128,24 @@
 	padding-left: 14px;
 	border: solid 1px #cfd7d9;
 	border-radius: 3px;
+
+	&_error {
+		border-color: #c82e2d;
+	}
+
+}
+
+.form__alert {
+	display: none;
+    position: absolute;
+    font-size: .67em;
+    left: 0px;
+    margin-top: 6px;
+    line-height: .9;
+    color: #c82e2d;
+    min-width: 154px;
+    -webkit-transition: all 0.3s;
+            transition: all 0.3s;
 }
 
 .form__cell {
@@ -121,12 +156,6 @@
 		margin-bottom: 20px;
 	}
 
-	&_text_name {
-		display: inline-block;
-		width: 129px;
-		margin-right: 12px;
-	}
-
 	&_text,
 	&_select {
 		margin-bottom: 20px;
@@ -134,6 +163,16 @@
 
 	&_select_dealer {
 		margin-bottom: 3px;
+	}
+
+	&_text {
+
+		&_name {
+			display: inline-block;
+			width: 129px;
+			margin-right: 12px;
+		}
+
 	}
 
 }

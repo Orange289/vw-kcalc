@@ -11,11 +11,11 @@
 
 .request__input {
 	width: 264px;
+	height: 18px;
 	font-family: 'vwtextoffice-regular', sans-serif;
 
 	&_name {
 		width: 129px;
-		height: 18px;
 		border-top-right-radius: 0;
 		border-bottom-right-radius: 0;
 	}
@@ -32,7 +32,7 @@
 	@include font-param(16px, 23px, 400);
 	cursor: pointer;
 	display: inline-block;
-	padding-top: 8px;
+	padding-top: 9px;
 	padding-bottom: 9px;
 	// -moz-padding-top: 4px;
 	// -moz-padding-bottom: 8px;
@@ -91,22 +91,22 @@
 	}
 
 	.request__input {
-		width: 330px;
+		width: 330px !important;
 
 		&_name {
-			width: 212px;
+			width: 212px !important;
 		}
 
 	}
 
 	.request__radio + span {
 		padding-left: 17px;
-		padding-right: 20px;
+		padding-right: 18px;
 	}
 
 	.form__label_radio_request:last-of-type .request__radio + span {
 		padding-left: 14px;
-		padding-right: 10px;
+		padding-right: 11px;
 	}
 
 }

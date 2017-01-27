@@ -68,8 +68,16 @@
 
 	.icon {
 
-		&_ruble.icon_blue {
-			margin-left: -6px;
+		&_ruble.icon_blue_prices {
+			margin-left: -5px;
+		}
+
+		&_ruble.icon_blue_payment {
+			margin-left: 2px;
+		}
+
+		&_ruble.icon_white {
+			margin-left: 2px;
 		}
 
 		&_ruble_popup {

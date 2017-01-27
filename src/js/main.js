@@ -105,4 +105,80 @@ $("#range-rest")
 	})
 
 
+// edit price
+
+	$(".btn_edit").on("click", function(){
+		$(this).parents('.form__cell').find('.form__text').removeAttr('disabled');
+	})
+
+//check fields
+
+	var pattern_name = /^[a-zA-Zа-яА-ЯёЁ]{1,20}$/i;
+	var name = $('#name');
+	var surname = $('#surname');
+
+	var pattern_tel = /^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$/i;
+	var phone = $('#tel');
+
+	var pattern_email = /^([a-z0-9_\.-])+@[a-z0-9-]+\.([a-z]{2,4}\.)?[a-z]{2,4}$/i;
+	var email = $('#email');
+
+	email.blur(function(){
+		if($(this).val() != '') {
+			if(pattern_email.test($(this).val())) {
+				$(this).removeClass('form__text_error');
+				$(this).parents('.form__field-wrap_request').find('.form__alert').remove();
+
+			} else {
+				$(this).addClass('form__text_error');
+				$(this).parents('.form__field-wrap_request').append('<div class="form__alert">Поле заполнено неправильно!</div>');
+				$(this).parents('.form__field-wrap_request').find('.form__alert').css('display','block');
+			}
+		}
+	});
+
+	name.blur(function(){
+		if($(this).val() != '') {
+			if(pattern_name.test($(this).val())) {
+				$(this).removeClass('form__text_error');
+				$(this).parents('.form__field-wrap_request').find('.form__alert').remove();
+
+			} else {
+				$(this).addClass('form__text_error');
+				$(this).parents('.form__field-wrap_request').append('<div class="form__alert">Поле заполнено неправильно!</div>');
+				$(this).parents('.form__field-wrap_request').find('.form__alert').css('display','block');
+			}
+		}
+	});
+
+	surname.blur(function(){
+		if($(this).val() != '') {
+			if(pattern_name.test($(this).val())) {
+				$(this).removeClass('form__text_error');
+				$(this).parents('.form__field-wrap_request').find('.form__alert').remove();
+
+			} else {
+				$(this).addClass('form__text_error');
+				$(this).parents('.form__field-wrap_request').append('<div class="form__alert">Поле заполнено неправильно!</div>');
+				$(this).parents('.form__field-wrap_request').find('.form__alert').css('display','block');
+			}
+		}
+	});
+
+	phone.blur(function(){
+		if($(this).val() != '') {
+			if(pattern_tel.test($(this).val())) {
+				$(this).removeClass('form__text_error');
+				$(this).parents('.form__field-wrap_request').find('.form__alert').remove();
+
+			} else {
+				$(this).addClass('form__text_error');
+				$(this).parents('.form__field-wrap_request').append('<div class="form__alert">Поле заполнено неправильно!</div>');
+				$(this).parents('.form__field-wrap_request').find('.form__alert').css('display','block');
+			}
+		}
+	});
+
+
+
 })
