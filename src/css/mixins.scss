@@ -44,8 +44,7 @@
 
 // маленький кружок с цифрой
 
-@mixin circle($content, $l, $t) {
-	content: $content;
+@mixin circle($l, $t) {
 	position: absolute;
 	top: $t;
 	left: $l;
@@ -55,6 +54,7 @@
 	@include size(13px);
 	background-color: $blue;
 	border-radius: 50%;
+	cursor: pointer;
 }
 
 // отметка шкалы

@@ -1,6 +1,3 @@
-- var jQuery = true;
-- var jQueryUI = false;
-
 //--------------------------------------------------------------forms
 - var default_select_1 = {block_class_mod:'form__cell_filters', class_mod:'select_wrap form__select form__select_filters kdxvw-form__row', elem_class:'js-kdxvw-chosen'}
 - var default_select_2 = {class_mod:'select_wrap kdxvw-form__row', block_class_mod:'form__cell_select_credit', elem_class:'js-kdxvw-chosen'}
@@ -13,8 +10,8 @@
 - var default_text_3 = {class_mod:'form__field-wrap_request',block_class_mod:'form__cell_text form__cell_text_surname', elem_class:'request__input request__input_surname', label_mod:'form__label_request'}
 - var default_text_4 = {class_mod:'form__field-wrap_request',block_class_mod:'form__cell_text form__cell_text_email', elem_class:'request__input request__input_email', label_mod:'form__label_request'}
 - var default_text_5 = {class_mod:'form__field-wrap_request',block_class_mod:'form__cell_text form__cell_text_tel', elem_class:'request__input request__input_tel', label_mod:'form__label_request'}
-- var default_checkbox_1 = {block_class_mod:'form__cell_checkbox', elem_class:'form__checkbox request__checkbox', label_mod:'form__label_checkbox form__label_checkbox_1'}
-- var default_checkbox_2 = {block_class_mod:'form__cell_checkbox', elem_class:'form__checkbox request__checkbox', label_mod:'form__label_checkbox form__label_checkbox_2'}
+- var default_checkbox_1 = {block_class_mod:'form__cell_checkbox', elem_class:'form__checkbox request__checkbox', label_mod:'form__label_checkbox form__label_checkbox_1',circle_class:'circle_2'}
+- var default_checkbox_2 = {block_class_mod:'form__cell_checkbox', elem_class:'form__checkbox request__checkbox', label_mod:'form__label_checkbox form__label_checkbox_2',circle_class:'circle_3'}
 - var default_radio = {block_class_mod:'form__cell_radio', elem_class:'form__radio request__radio', label_mod:'form__label_radio_request'}
 
 //--------------------------------------------------------------forms
@@ -25,5 +22,9 @@
 - var arrayTabs_2 = [{name:'docs',id:'t3',class_r:'tabs__radio tabs__radio_docs',class_l:'tabs__option tabs__option_docs',label:'По 2-м документам',check:'1'}, {name:'docs',id:'t4',class_r:'tabs__radio tabs__radio_docs',class_l:'tabs__option tabs__option_docs',label:'Полный комплект',check:'0'}]
 
 //--------------------------------------------------------------slider
-- var arraySlider_1 = {title:'Первоначальный взнос', id:'deposit', id_slider:'range-deposit', mod:'deposit'}
-- var arraySlider_2 = {title:'Остаточный платеж', id:'rest', id_slider:'range-rest', mod:'rest'}
+- var arraySlider_1 = {title:'Первоначальный взнос', id:'deposit', id_slider:'range-deposit', mod:'deposit', input_class:'range__input range__input_deposit', input_value:'527 600', edit_class:'edit_deposit icon_edit_deposit'}
+- var arraySlider_2 = {title:'Остаточный платеж', id:'rest', id_slider:'range-rest', mod:'rest', input_class:'range__input range__input_rest', input_value:'527 600', edit_class:'edit_rest icon_edit_rest'}
+- var arraySlider_3 = {title:'Срок кредитования', id:'credit', id_slider:'range-credit', mod:'credit', input_class:'range__input range__input_credit', input_value:'12', edit_class:'edit_credit icon_edit_credit'}
+
+//--------------------------------------------------------------disclaimer
+- var arrayDisc = [{id:'disclaimer_1',text:'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',btn:'disclaimer__btn_1'},{id:'disclaimer_2',text:'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',btn:'disclaimer__btn_2'},{id:'disclaimer_3',text:'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',btn:'disclaimer__btn_3'}]

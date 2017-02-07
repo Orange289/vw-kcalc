@@ -57,7 +57,7 @@
                   <div class="prices__item prices__item_cost">
                     <dl class="form__cell programs__input programs__input_cost">
                       <dd class="form__field-wrap">
-                        <input value="10 319 000" type="text" id="cost" placeholder="" disabled="disabled" class="form__text prices__value prices__value_cost form__text_disabled ">
+                        <input value="1 319 000" type="text" id="cost" placeholder="" class="form__text prices__value prices__value_cost form__text_disabled ">
                         <svg class="icon icon_ruble icon_gray">
                           <use xlink:href="img/sprite.svg#i-ruble"></use>
                         </svg>
@@ -65,7 +65,7 @@
                       <dt class="form__label form__label_price">
                         <label for="cost">Стоимость автомобиля</label>
                         <svg class="icon icon_edit icon_blue btn_edit">
-                          <use xlink:href="img/sprite.svg#i-pencil"></use>
+                          <use xlink:href="img/sprite.svg#vw_pencil"></use>
                         </svg>
                       </dt>
                     </dl>
@@ -79,25 +79,22 @@
               <div class="programs__left">
                 <div class="programs__slider range range_deposit">
                   <label for="deposit" class="form__label">Первоначальный взнос</label>
-                  <input type="text" value="0" pattern="[0-9]" id="deposit" disabled="disabled" class="range__input range__input_deposit form__text"/>
-                  <div id="range-deposit" class="range__slider range__slider_deposit"></div>
-                  <svg class="icon icon_ruble icon_gray icon_ruble_slider">
+                  <input value="527 600" class="form__text form__text_disabled range__input range__input_deposit"/>
+                  <svg class="icon icon_edit icon_blue edit_deposit icon_edit_deposit">
+                    <use xlink:href="img/sprite.svg#vw_pencil"></use>
+                  </svg>
+                  <input type="text" id="range-deposit" class="range__slider range__slider_deposit"/>
+                  <svg class="icon icon_ruble icon_gray icon_deposit">
                     <use xlink:href="img/sprite.svg#i-ruble"></use>
                   </svg>
                 </div>
-                <div class="programs__credit_term">
-                  <dl class="form__cell form__cell_filters form__cell_filters_credit">
-                    <dt class="form__label">
-                      <label for="credit">Срок кредитования</label>
-                    </dt>
-                    <dd class="form__field-wrap select_wrap form__select form__select_filters form__select_filters_credit kdxvw-form__row">
-                      <select id="credit" data-placeholder="" class="js-kdxvw-chosen">
-                        <option value="12 месяцев">12 месяцев</option>
-                        <option value="12 месяцев">12 месяцев</option>
-                        <option value="12 месяцев">12 месяцев</option>
-                      </select>
-                    </dd>
-                  </dl>
+                <div class="programs__slider range range_credit">
+                  <label for="credit" class="form__label">Срок кредитования</label>
+                  <input value="12" class="form__text form__text_disabled range__input range__input_credit"/>
+                  <svg class="icon icon_edit icon_blue edit_credit icon_edit_credit">
+                    <use xlink:href="img/sprite.svg#vw_pencil"></use>
+                  </svg>
+                  <input type="text" id="range-credit" class="range__slider range__slider_credit"/><span class="range__span">мес</span>
                 </div>
               </div>
             </div>
@@ -105,14 +102,18 @@
           <div id="tab-content-1" class="tabs__content programs__content_guarantee t1">
             <div class="range range_rest">
               <label for="rest" class="form__label">Остаточный платеж</label>
-              <input type="text" value="0" pattern="[0-9]" id="rest" disabled="disabled" class="range__input range__input_rest form__text"/>
-              <div id="range-rest" class="range__slider range__slider_rest"></div>
-              <svg class="icon icon_ruble icon_gray icon_ruble_slider">
+              <input value="527 600" class="form__text form__text_disabled range__input range__input_rest"/>
+              <svg class="icon icon_edit icon_blue edit_rest icon_edit_rest">
+                <use xlink:href="img/sprite.svg#vw_pencil"></use>
+              </svg>
+              <input type="text" id="range-rest" class="range__slider range__slider_rest"/>
+              <svg class="icon icon_ruble icon_gray icon_rest">
                 <use xlink:href="img/sprite.svg#i-ruble"></use>
               </svg>
             </div>
             <div class="payment">
-              <h1 class="page_body__title payment__title">Низкий ежемесячный платеж</h1><span class="payment__subtitle">Условия кредитования</span>
+              <h1 class="page_body__title payment__title">Низкий ежемесячный платеж</h1>
+              <div class="payment__subtitle">Условия кредитования<span class="circle circle_1">1</span></div>
               <div class="payment__comparison">
                 <div class="payment__program payment__program_guarantee">
                   <div class="payment__price payment__price_guarantee"><span>17 800</span>
@@ -150,7 +151,8 @@
                   <option value="Кредит на приобретение транспортного средства">Кредит на приобретение транспортного средства</option>
                 </select>
               </dd>
-            </dl><span class="programs__subtitle">Условия кредитования</span>
+            </dl>
+            <div class="programs__subtitle">Условия кредитования<span class="circle circle_1">1</span></div>
             <div class="tabs tabs_docs">
               <div class="tabs__wrapper tabs__wrapper_docs">
                 <input type="radio" name="docs" id="t3" checked="checked" class="tabs__radio tabs__radio_docs"/>
@@ -185,22 +187,22 @@
                   <label for="name">Имя</label>
                 </dt>
                 <dd class="form__field-wrap form__field-wrap_request">
-                  <input type="text" id="name" placeholder="Имя" class="form__text request__input request__input_name "/>
+                  <input type="text" id="name" placeholder="Введите имя" class="form__text request__input request__input_name "/>
                 </dd>
               </dl>
               <label class="form__label form__label_radio_request">
                 <input name="sex" type="radio" checked="checked" class="form__radio request__radio "/><span>Г-н</span>
-              </label>
+              </label><i class="circle"></i>
               <label class="form__label form__label_radio_request">
                 <input name="sex" type="radio" class="form__radio request__radio "/><span>Г-жа</span>
-              </label>
+              </label><i class="circle"></i>
             </div>
             <dl class="form__cell form__cell_text form__cell_text_surname">
               <dt class="form__label form__label_request">
                 <label for="surname">Фамилия</label>
               </dt>
               <dd class="form__field-wrap form__field-wrap_request">
-                <input type="text" id="surname" placeholder="Фамилия" class="form__text request__input request__input_surname "/>
+                <input type="text" id="surname" placeholder="Введите фамилию" class="form__text request__input request__input_surname "/>
               </dd>
             </dl>
             <dl class="form__cell form__cell_text form__cell_text_email">
@@ -208,7 +210,7 @@
                 <label for="email">E-mail</label>
               </dt>
               <dd class="form__field-wrap form__field-wrap_request">
-                <input type="email" id="email" placeholder="E-mail" class="form__text request__input request__input_email "/>
+                <input type="email" id="email" placeholder="Введите е-mail" class="form__text request__input request__input_email "/>
               </dd>
             </dl>
             <dl class="form__cell form__cell_text form__cell_text_tel">
@@ -216,7 +218,7 @@
                 <label for="tel">Телефон</label>
               </dt>
               <dd class="form__field-wrap form__field-wrap_request">
-                <input type="tel" id="tel" placeholder="Телефон" class="form__text request__input request__input_tel "/>
+                <input type="tel" id="tel" placeholder="+7 (___) ___-__-__" class="form__text request__input request__input_tel "/>
               </dd>
             </dl>
             <dl class="form__cell form__cell_select form__cell_select_city">
@@ -282,10 +284,10 @@
             <div class="request__agree">
               <label class="form__label form__label_checkbox form__label_checkbox_1">
                 <input type="checkbox" checked="checked" class="form__checkbox request__checkbox "/><span>Согласие на обработку персональных данных с целью обработки запроса</span>
-              </label>
+              </label><i class="circle circle_2">2</i>
               <label class="form__label form__label_checkbox form__label_checkbox_2">
                 <input type="checkbox" checked="checked" class="form__checkbox request__checkbox "/><span>Согласие на обработку персональных данных с целью дальнейшей коммуникации</span>
-              </label>
+              </label><i class="circle circle_3">3</i>
             </div>
             <button type="submit" class="btn btn_send">Отправить</button>
           </form>
@@ -295,7 +297,7 @@
     <script src="js/jquery-1.11.1.min.js"></script>
     <script src="js/jquery-ui.min.js"></script>
     <script src="js/all/modernizr.js"></script>
-    <script src="js/jquery-ui-slider-pips.js"></script>
+    <script src="js/ion.rangeSlider.min.js"></script>
     <script src="js/kdxvw-customscroll.js"></script>
     <script src="js/kdxvw-chosen.js"></script>
     <script src="js/kdxvw-maskedinput.min.js"></script>
@@ -326,6 +328,65 @@
                 <use xlink:href="img/sprite.svg#i-brochure"></use>
               </svg></a><a href="#" class="popup__link">Требования к заемщику</a></div>
         </div>
+      </div>
+    </div>
+    <div class="disclaimer">
+      <div id="disclaimer_1" class="disclaimer__item">
+        <p class="disclaimer__text disclaimer__text_1">
+          Услуги страхования оказывают: <br>
+          - ОАО «АльфаСтрахование» (Лицензия СИ № 2239),
+          <br>
+          - САО «ВСК» (Лицензия СИ № 0621),
+          <br>
+          - ООО «Группа Ренессанс Страхование» (Лицензия СИ № 1284),
+          <br>
+          - СПАО «Ингосстрах» (Лицензия CИ № 0928),
+          <br>
+          - ПАО «Росгосстрах» (Лицензия СИ № 0001)
+          <span> При выборе страхователем иной страховой организации условия страхования могут отличаться. Общество с ограниченной ответственностью «Фольксваген Финансовые Услуги РУС» не оказывает услуги страхования.</span>
+          <span> <sup>1</sup> Условия предоставления и наличие данной услуги необходимо уточнить у страховщика в Вашем регионе <br>
+          <sup>2</sup> Фольксваген Страхование <br>
+          <sup>3</sup> Наличие услуги уточняйте у выбранной Вами страховой компании в Вашем регионе </span>
+        </p>
+        <button type="button" class="disclaimer__btn disclaimer__btn_1"></button>
+      </div>
+      <div id="disclaimer_2" class="disclaimer__item">
+        <p class="disclaimer__text disclaimer__text_2">
+          Услуги страхования оказывают: <br>
+          - ОАО «АльфаСтрахование» (Лицензия СИ № 2239),
+          <br>
+          - САО «ВСК» (Лицензия СИ № 0621),
+          <br>
+          - ООО «Группа Ренессанс Страхование» (Лицензия СИ № 1284),
+          <br>
+          - СПАО «Ингосстрах» (Лицензия CИ № 0928),
+          <br>
+          - ПАО «Росгосстрах» (Лицензия СИ № 0001)
+          <span> При выборе страхователем иной страховой организации условия страхования могут отличаться. Общество с ограниченной ответственностью «Фольксваген Финансовые Услуги РУС» не оказывает услуги страхования.</span>
+          <span> <sup>1</sup> Условия предоставления и наличие данной услуги необходимо уточнить у страховщика в Вашем регионе <br>
+          <sup>2</sup> Фольксваген Страхование <br>
+          <sup>3</sup> Наличие услуги уточняйте у выбранной Вами страховой компании в Вашем регионе </span>
+        </p>
+        <button type="button" class="disclaimer__btn disclaimer__btn_2"></button>
+      </div>
+      <div id="disclaimer_3" class="disclaimer__item">
+        <p class="disclaimer__text disclaimer__text_3">
+          Услуги страхования оказывают: <br>
+          - ОАО «АльфаСтрахование» (Лицензия СИ № 2239),
+          <br>
+          - САО «ВСК» (Лицензия СИ № 0621),
+          <br>
+          - ООО «Группа Ренессанс Страхование» (Лицензия СИ № 1284),
+          <br>
+          - СПАО «Ингосстрах» (Лицензия CИ № 0928),
+          <br>
+          - ПАО «Росгосстрах» (Лицензия СИ № 0001)
+          <span> При выборе страхователем иной страховой организации условия страхования могут отличаться. Общество с ограниченной ответственностью «Фольксваген Финансовые Услуги РУС» не оказывает услуги страхования.</span>
+          <span> <sup>1</sup> Условия предоставления и наличие данной услуги необходимо уточнить у страховщика в Вашем регионе <br>
+          <sup>2</sup> Фольксваген Страхование <br>
+          <sup>3</sup> Наличие услуги уточняйте у выбранной Вами страховой компании в Вашем регионе </span>
+        </p>
+        <button type="button" class="disclaimer__btn disclaimer__btn_3"></button>
       </div>
     </div>
   </body>

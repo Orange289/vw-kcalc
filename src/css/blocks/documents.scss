@@ -13,6 +13,7 @@
 
 	span {
 		@include font-param(13px, 15px, 700);
+		font-family: 'vwtextoffice-bold',sans-serif;
 		text-transform: uppercase;
 		display: inline-block;
 		vertical-align: top;

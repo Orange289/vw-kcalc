@@ -22,13 +22,13 @@
 				.prices__item.prices__item_cost
 					dl(class='form__cell programs__input programs__input_cost')
 						dd(class='form__field-wrap')
-							input(value='10 319 000' type='text' id='cost' placeholder='' disabled='disabled' class='form__text prices__value prices__value_cost form__text_disabled ')
+							input(value='1 319 000' type='text' id='cost' placeholder='' class='form__text prices__value prices__value_cost form__text_disabled ')
 							svg(class='icon icon_ruble icon_gray')
 								use(xlink:href='img/sprite.svg#i-ruble')
 						dt(class='form__label form__label_price')
 							label(for='cost') Стоимость автомобиля
 							svg(class='icon icon_edit icon_blue btn_edit')
-								use(xlink:href='img/sprite.svg#i-pencil')
+								use(xlink:href='img/sprite.svg#vw_pencil')
 				.prices__item.prices__item_payment
 					b.prices__value.prices__value_pay 170 800
 						svg(class='icon icon_ruble icon_blue icon_blue_prices')
@@ -37,13 +37,8 @@
 		.programs__left
 			.programs__slider.range.range_deposit
 				+ slider(arraySlider_1)
-				//- .slider
-				//- input.slider__input(type='text')
-			.programs__credit_term
-				+ form_element({
-					type:'select',
-					class_array: default_select_5,
-					id:'credit',
-					title:'Срок кредитования',
-					options:['12 месяцев','12 месяцев','12 месяцев']
-				})
+				svg(class='icon icon_ruble icon_gray icon_deposit')
+					use(xlink:href='img/sprite.svg#i-ruble')
+			.programs__slider.range.range_credit
+				+ slider(arraySlider_3)
+				span.range__span мес

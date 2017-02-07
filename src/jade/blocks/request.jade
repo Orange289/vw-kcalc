@@ -8,7 +8,7 @@
 					class_array: default_text_2,
 					id:'name',
 					title:'Имя',
-					placeholder:'Имя',
+					placeholder:'Введите имя',
 					active:'1'
 				})
 				+ form_element({
@@ -29,7 +29,7 @@
 				class_array: default_text_3,
 				id:'surname',
 				title:'Фамилия',
-				placeholder:'Фамилия',
+				placeholder:'Введите фамилию',
 				active:'1'
 			})
 			+ form_element({
@@ -37,7 +37,7 @@
 				class_array: default_text_4,
 				id:'email',
 				title:'E-mail',
-				placeholder:'E-mail',
+				placeholder:'Введите е-mail',
 				active:'1'
 			})
 			+ form_element({
@@ -45,7 +45,7 @@
 				class_array: default_text_5,
 				id:'tel',
 				title:'Телефон',
-				placeholder:'Телефон',
+				placeholder:'+7 (___) ___-__-__',
 				active:'1'
 			})
 			+ form_element({
@@ -70,12 +70,14 @@
 					type:'checkbox',
 					class_array: default_checkbox_1,
 					title: 'Согласие на обработку персональных данных с целью обработки запроса',
-					checked: 'checked'
+					checked: 'checked',
+					num: '2'
 				})
 				+ form_element({
 					type:'checkbox',
 					class_array: default_checkbox_2,
 					title: 'Согласие на обработку персональных данных с целью дальнейшей коммуникации',
-					checked: 'checked'
+					checked: 'checked',
+					num: '3'
 				})
 			button.btn.btn_send(type='submit') Отправить

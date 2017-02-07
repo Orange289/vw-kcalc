@@ -5,7 +5,6 @@ var gulp = require('gulp'),
 		rimraf = require('rimraf'),
 		jade = require('gulp-jade'),
 		sass = require('gulp-sass'),
-		cssfont64 = require('gulp-cssfont64'),
 		prefixer = require('gulp-autoprefixer'),
 		plumber = require('gulp-plumber'),
 

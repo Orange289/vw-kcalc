@@ -1,0 +1,32 @@
+.circle {
+	font-style: normal;
+
+	&_1 {
+		@include circle(140px, -5px);
+	}
+
+	&_2,
+	&_3 {
+		display: none;
+	}
+
+}
+
+
+@media ($wide-widths) {
+
+	.circle {
+
+		&_2 {
+			display: block;
+			@include circle(559px, -4px);
+		}
+
+		&_3 {
+			display: block;
+			@include circle(618px, 26px);
+		}
+
+	}
+
+}

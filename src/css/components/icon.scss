@@ -3,12 +3,6 @@
 	&_ruble {
 		@include size(11px, 12px);
 
-		&_slider {
-			position: absolute;
-			top: 42px;
-			left: 83px;
-		}
-
 		&_popup {
 			display: none;
 		}
@@ -16,7 +10,27 @@
 	}
 
 	&_edit {
-		@include size(15px, 16px);
+		@include size(15px, 15px);
+		cursor: pointer;
+
+		&_deposit {
+			position: absolute;
+			top: 20px;
+			left: 266px;
+		}
+
+		&_rest {
+			position: absolute;
+			top: 20px;
+			left: 266px;
+		}
+
+		&_credit {
+			position: absolute;
+			top: 21px;
+			left: 266px;
+		}
+
 	}
 
 	&_blue {
@@ -61,6 +75,18 @@
 		fill: $white;
 	}
 
+	&_deposit {
+		position: absolute;
+		top: 24px;
+		left: 250px;
+	}
+
+	&_rest {
+		position: absolute;
+		top: 24px;
+		left: 251px;
+	}
+
 }
 
 
@@ -99,6 +125,37 @@
 			left: 16px;
 		}
 
+		&_deposit {
+			left: 310px;
+		}
+
+		&_rest {
+			left: 307px;
+		}
+
+		&_edit {
+
+			&_deposit {
+				top: 20px;
+				left: 325px;
+			}
+
+			&_rest {
+				top: 20px;
+				left: 325px;
+			}
+
+			&_credit {
+				top: 20px;
+				left: 325px;
+			}
+
+		}
+
+
+
 	}
+
+
 
 }

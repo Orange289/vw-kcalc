@@ -1,9 +1,12 @@
 .tabs__content.programs__content_guarantee.t1#tab-content-1
 	.range.range_rest
 		+ slider(arraySlider_2)
+		svg(class='icon icon_ruble icon_gray icon_rest')
+			use(xlink:href='img/sprite.svg#i-ruble')
 	.payment
 		h1.page_body__title.payment__title Низкий ежемесячный платеж
-		span.payment__subtitle Условия кредитования
+		.payment__subtitle Условия кредитования
+			span.circle.circle_1 1
 		.payment__comparison
 			.payment__program.payment__program_guarantee
 				.payment__price.payment__price_guarantee

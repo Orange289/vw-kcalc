@@ -18,7 +18,7 @@ mixin scripts
 	script(src="js/jquery-1.11.1.min.js")
 	script(src="js/jquery-ui.min.js")
 	script(src='js/all/modernizr.js')
-	script(src="js/jquery-ui-slider-pips.js")
+	script(src="js/ion.rangeSlider.min.js")
 	script(src='js/kdxvw-customscroll.js')
 	script(src='js/kdxvw-chosen.js')
 	script(src='js/kdxvw-maskedinput.min.js')
@@ -71,6 +71,7 @@ mixin form_element(config)
 			else
 				input(name=config.name type=config.type class='#{config.class_array.elem_class} #{config.add_class}')
 			span #{config.title}
+		i.circle(class=config.class_array.circle_class) #{config.num}
 
 mixin loop_while(counter)
 	- i=0;

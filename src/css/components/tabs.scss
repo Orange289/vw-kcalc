@@ -107,16 +107,16 @@
 	.tabs_programs {
 
 		.tabs__wrapper {
-			@include size(435px, 58px);
+			@include size(435px, 46px);
 			border-radius: 100px;
 			margin-bottom: 52px;
 		}
 
 		.tabs__option {
 			font-size: 15px;
-			padding-top: 24px;
-			padding-bottom: 20px;
-			margin-right: 28px;
+			padding-top: 17px;
+			padding-bottom: 10px;
+			margin-right: 33px;
 
 			&:first-of-type {
 				margin-left: 34px;
@@ -125,11 +125,14 @@
 		}
 
 		.tabs__radio:checked + .tabs__option {
+			font-family: 'vwheadoffice-regular', sans-serif;
 			font-size: 15px;
-			@include size(207px, 28px);
-			margin-left: 10px;
+			font-weight: 400;
+			width: 207px;
+			margin-left: 4px;
 			margin-right: 12px;
-			padding-top: 16px;
+			padding-bottom: 6px;
+			padding-top: 14px;
 			border-radius: 100px;
 		}
 
@@ -148,21 +151,14 @@
 		margin-left: 90px;
 		position: relative;
 
-		&::before {
-			content: '';
-			position: absolute;
-			top: 5px;
-			left: 0;
-			@include size(1px, 100%);
-			border-left: 1px dashed #d8d8d8;
-		}
-
 		.tabs__wrapper_docs {
 			@include size(314px, 43px);
 		}
 
 		.tabs__option_docs {
+			font-family: 'vwtextoffice-bold',sans-serif;
 			font-size: 13px;
+			font-weight: 700;
 			padding-top: 15px;
 			margin-right: 20px;
 
@@ -178,6 +174,8 @@
 
 		.tabs__radio_docs:checked + .tabs__option_docs {
 			font-size: 13px;
+			font-family: 'vwtextoffice-bold',sans-serif;
+			font-weight: 700;
 			width: 131px;
 			margin-left: 20px;
 			margin-right: 20px;

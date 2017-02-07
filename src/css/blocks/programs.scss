@@ -120,11 +120,6 @@
 		margin-right: 103px;
 		padding-right: 16px;
 		position: relative;
-
-		&::after {
-			@include circle('1', 141px, -3px);
-		}
-
 	}
 
 }
