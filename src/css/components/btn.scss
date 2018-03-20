@@ -47,6 +47,8 @@
 			background: url('../img/icons/i-more.svg') no-repeat;
 			@include size(34px, 9px);
 			margin-left: 72px;
+			vertical-align: top;
+			margin-top: 17px;
 		}
 
 		&_close {

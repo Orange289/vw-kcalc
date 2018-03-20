@@ -32,7 +32,6 @@
 	padding-left: 15px;
 	padding-right: 73px;
 	padding-bottom: 14px;
-	width: 740px;
 	margin: auto;
 	display: none;
 	position: relative;
@@ -48,6 +47,10 @@
 		display: inline-block;
 		margin-right: 2px;
 		margin-top: -5px;
+	}
+
+	@media ($wide-widths) {
+		width: 740px;
 	}
 
 }

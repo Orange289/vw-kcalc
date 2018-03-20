@@ -1,4 +1,4 @@
-$(document).ready(function(){
+$(function(){
 
 	svg4everybody({});
 
@@ -9,7 +9,7 @@ $(document).ready(function(){
 		$(this).parents(".popup").find(".popup__actions").slideToggle("fast");
 	})
 
-//tabs
+// tabs
 
 
 	$('.tabs__radio_prog').click(function(){
@@ -28,10 +28,10 @@ $(document).ready(function(){
 	  });
 
 	  $('.tabs__radio_docs').click(function(){
-  	  var thisId = this.id.slice(0,2);
-  	  $('div.t3').hide();
-  	  $('div.t4').hide();
-  	  $('div.' + thisId).show();
+		var thisId = this.id.slice(0,2);
+		$('div.t3').hide();
+		$('div.t4').hide();
+		$('div.' + thisId).show();
   	  });
 
 
@@ -57,19 +57,22 @@ $(document).ready(function(){
 	   return str.replace(/(\s)+/g, '').replace(/(\d{1,3})(?=(?:\d{3})+$)/g, '$1 ');
 	}
 
-	$('.range__input').keypress(function(event){
-			var key, keyChar;
-			if(!event) var event = window.event;
+	var checkNumber = function (event) {
+		var key, keyChar;
+		if (!event) var event = window.event;
 
-			if (event.keyCode) key = event.keyCode;
-			else if(event.which) key = event.which;
+		if (event.keyCode) key = event.keyCode;
+		else if (event.which) key = event.which;
 
-			if(key==null || key==0 || key==8 || key==13 || key==9 || key==46 || key==37 || key==39 ) return true;
-			keyChar=String.fromCharCode(key);
+		if (key == null || key == 0 || key == 8 || key == 13 || key == 9 || key == 46 || key == 37 || key == 39) return true;
+		keyChar = String.fromCharCode(key);
 
-			if(!/\d/.test(keyChar))	return false;
+		if (!/\d/.test(keyChar)) return false;
+	}
 
-		});
+	$('.range__input').keypress(checkNumber);
+
+	$('#cost').keypress(checkNumber);
 
 $('.ui-widget.ui-widget-content').css('border','none');
 $('.ui-widget-header').css('background','transparent');
@@ -251,61 +254,48 @@ $('.ui-widget-header').css('background','transparent');
 	var pattern_email = /^([a-z0-9_\.-])+@[a-z0-9-]+\.([a-z]{2,4}\.)?[a-z]{2,4}$/i;
 	var email = $('#email');
 
-	email.blur(function(){
-		if($(this).val() != '') {
-			if(pattern_email.test($(this).val())) {
-				$(this).removeClass('form__text_error');
-				$(this).parents('.form__field-wrap_request').find('.form__alert').remove();
+	var checkPattern = function (pattern, el) {
+		if ($(el).val() != '') {
+			if (pattern_email.test($(el).val())) {
+				$(el).removeClass('form__text_error');
+				$(el).parents('.form__field-wrap_request').find('.form__alert').remove();
 
 			} else {
-				$(this).addClass('form__text_error');
-				$(this).parents('.form__field-wrap_request').append('<div class="form__alert">Поле заполнено неправильно!</div>');
-				$(this).parents('.form__field-wrap_request').find('.form__alert').css('display','block');
+				$(el).parents('.form__field-wrap_request').find('.form__alert').remove();
+				$(el).addClass('form__text_error');
+				$(el).parents('.form__field-wrap_request').append('<div class="form__alert">Поле заполнено неправильно!</div>');
+				$(el).parents('.form__field-wrap_request').find('.form__alert').css('display', 'block');
 			}
 		}
-	});
+	}
 
-	name.blur(function(){
-		if($(this).val() != '') {
-			if(pattern_name.test($(this).val())) {
-				$(this).removeClass('form__text_error');
-				$(this).parents('.form__field-wrap_request').find('.form__alert').remove();
+	var formValidate = function (event) {
 
-			} else {
-				$(this).addClass('form__text_error');
-				$(this).parents('.form__field-wrap_request').append('<div class="form__alert">Поле заполнено неправильно!</div>');
-				$(this).parents('.form__field-wrap_request').find('.form__alert').css('display','block');
-			}
+		switch (event.target.id) {
+			case 'email':
+				checkPattern(pattern_email, email);
+				break;
+			case 'name':
+				checkPattern(pattern_name, name);
+				break;
+			case 'surname':
+				checkPattern(pattern_name, surname);
+				break;
+			case 'tel':
+				checkPattern(pattern_tel, tel);
+				break;
+
 		}
-	});
 
-	surname.blur(function(){
-		if($(this).val() != '') {
-			if(pattern_name.test($(this).val())) {
-				$(this).removeClass('form__text_error');
-				$(this).parents('.form__field-wrap_request').find('.form__alert').remove();
+	}
 
-			} else {
-				$(this).addClass('form__text_error');
-				$(this).parents('.form__field-wrap_request').append('<div class="form__alert">Поле заполнено неправильно!</div>');
-				$(this).parents('.form__field-wrap_request').find('.form__alert').css('display','block');
-			}
-		}
-	});
+	email.blur(formValidate);
 
-	phone.blur(function(){
-		if($(this).val() != '') {
-			if(pattern_tel.test($(this).val())) {
-				$(this).removeClass('form__text_error');
-				$(this).parents('.form__field-wrap_request').find('.form__alert').remove();
+	name.blur(formValidate);
 
-			} else {
-				$(this).addClass('form__text_error');
-				$(this).parents('.form__field-wrap_request').append('<div class="form__alert">Поле заполнено неправильно!</div>');
-				$(this).parents('.form__field-wrap_request').find('.form__alert').css('display','block');
-			}
-		}
-	});
+	surname.blur(formValidate);
+
+	phone.blur(formValidate);
 
 //open disclaimer
 
